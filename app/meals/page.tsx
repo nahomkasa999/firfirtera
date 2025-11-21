@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useMealStore } from '@/store/useMealStore';
 import { useAuthStore } from '@/store/useAuthStore';
+import { useToastStore } from '@/store/useToastStore';
 import { api } from '@/lib/api';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Clock, Users, X, Search, Filter, X as XIcon } from 'lucide-react';
@@ -20,6 +21,7 @@ export default function MyMealsPage() {
   const router = useRouter();
   const { organized, joined, setOrganized, setJoined, setLoading } = useMealStore();
   const { user } = useAuthStore();
+  const { error: showError, success: showSuccess } = useToastStore();
   const [activeTab, setActiveTab] = useState<'organized' | 'joined'>('organized');
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -60,7 +62,7 @@ export default function MyMealsPage() {
       setOrganized(organized.filter((m) => m.id !== mealId));
       setJoined(joined.filter((m) => m.id !== mealId));
     } catch (error: any) {
-      alert(error.message || 'Failed to cancel meal');
+      showError(error.message || 'Failed to cancel meal');
     }
   }
 

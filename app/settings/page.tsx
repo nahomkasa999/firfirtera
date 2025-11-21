@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuthStore } from '@/store/useAuthStore';
+import { useToastStore } from '@/store/useToastStore';
 import { api } from '@/lib/api';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GlassButton } from '@/components/ui/GlassButton';
@@ -10,6 +11,7 @@ import { closeApp } from '@/lib/telegram';
 
 export default function SettingsPage() {
   const { user, noShowCount, setUser } = useAuthStore();
+  const { success: showSuccess, error: showError } = useToastStore();
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState({
@@ -58,10 +60,10 @@ export default function SettingsPage() {
       setIsSaving(true);
       const data = await api.updateProfile(formData);
       setUser({ ...user, ...data.user });
-      alert('Profile updated successfully!');
+      showSuccess('Profile updated successfully!');
     } catch (error) {
       console.error('Failed to update profile:', error);
-      alert('Failed to update profile');
+      showError('Failed to update profile');
     } finally {
       setIsSaving(false);
     }

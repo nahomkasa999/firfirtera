@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect } from 'react';
 import { initTelegram } from '@/lib/telegram';
+import { ToastContainer } from '@/components/ui/Toast';
 import { useAuthStore } from '@/store/useAuthStore';
 import { BottomNav } from '@/components/ui/BottomNav';
 import { Header } from '@/components/ui/Header';
@@ -21,6 +22,7 @@ export function AppLayout({ children }: AppLayoutProps) {
 
   return (
     <div className="relative flex h-auto min-h-screen w-full bg-background">
+      <ToastContainer />
       {/* Desktop Sidebar */}
       <Sidebar />
 

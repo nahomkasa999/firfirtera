@@ -1,9 +1,18 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedUserId } from '@/lib/userService';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    // For now, return all meals. In production, filter by user
+    const userId = await getAuthenticatedUserId(prisma, request);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
     const allMeals = await prisma.mealRequest.findMany({
       include: {
         restaurant: true,
@@ -32,10 +41,11 @@ export async function GET() {
       },
     });
 
-    // Split into organized and joined (for now, just return all as organized)
-    // In production, filter based on authenticated user
-    const organized = allMeals;
-    const joined = allMeals.filter((meal) => meal.participants.length > 0);
+    // Split into organized and joined based on authenticated user
+    const organized = allMeals.filter((meal) => meal.organizerId === userId);
+    const joined = allMeals.filter((meal) => 
+      meal.participants.some((p) => p.userId === userId)
+    );
 
     return NextResponse.json({ organized, joined });
   } catch (error) {
@@ -47,8 +57,17 @@ export async function GET() {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
+    const userId = await getAuthenticatedUserId(prisma, request);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
     const body = await request.json();
     const {
       description,
@@ -59,17 +78,15 @@ export async function POST(request: Request) {
       mealTimeText,
       restaurantId,
       menuItemId,
+      menuItemIds,
       genderPreferences,
     } = body;
-
-    // For now, use a default user ID. In production, get from auth
-    const defaultUserId = '123456789'; // From seed data
 
     const expiresAt = new Date(new Date(mealTime).getTime() - 2 * 60 * 60 * 1000); // 2 hours before
 
     const meal = await prisma.mealRequest.create({
       data: {
-        organizerId: defaultUserId,
+        organizerId: userId,
         description,
         totalCost: totalCost.toString(),
         splitAmount: splitAmount.toString(),
@@ -77,8 +94,8 @@ export async function POST(request: Request) {
         mealTime: new Date(mealTime),
         mealTimeText: mealTimeText || null,
         restaurantId: restaurantId || null,
-        menuItemId: menuItemId || null,
-        genderPreferences: genderPreferences ? JSON.stringify(genderPreferences) : null,
+        menuItemId: menuItemId || (menuItemIds && menuItemIds.length > 0 ? menuItemIds[0] : null), // Use first item if array provided
+        genderPreferences: genderPreferences || null, // PostgreSQL Json type handles this directly
         expiresAt,
         status: 'OPEN',
         currentParticipants: 1, // Organizer counts as first participant

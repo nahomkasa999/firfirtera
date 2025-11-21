@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/useAuthStore';
+import { useToastStore } from '@/store/useToastStore';
 import { api } from '@/lib/api';
 
 import { SurfaceCard } from '@/components/ui/SurfaceCard';
@@ -15,6 +16,7 @@ export default function MealDetailPage() {
   const router = useRouter();
   const mealId = params.id as string;
   const { user } = useAuthStore();
+  const { error: showError, success: showSuccess } = useToastStore();
   const [meal, setMeal] = useState<any>(null);
   const [participants, setParticipants] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +48,7 @@ export default function MealDetailPage() {
       await api.joinMeal(mealId);
       await loadMeal();
     } catch (error: any) {
-      alert(error.message || 'Failed to join meal');
+      showError(error.message || 'Failed to join meal');
     } finally {
       setIsJoining(false);
     }
@@ -59,7 +61,7 @@ export default function MealDetailPage() {
       await api.cancelMeal(mealId);
       router.push('/meals');
     } catch (error: any) {
-      alert(error.message || 'Failed to cancel meal');
+      showError(error.message || 'Failed to cancel meal');
     }
   }
 

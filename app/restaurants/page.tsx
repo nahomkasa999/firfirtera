@@ -29,10 +29,16 @@ export default function RestaurantsPage() {
     }
   }
 
-  const filteredRestaurants = restaurants.filter((restaurant) =>
-    restaurant.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    restaurant.location?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredRestaurants = restaurants
+    .filter((restaurant) =>
+      restaurant.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      restaurant.location?.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => {
+      const nameA = (a.name || '').toLowerCase();
+      const nameB = (b.name || '').toLowerCase();
+      return nameA.localeCompare(nameB);
+    });
 
   function handleRestaurantClick(restaurant: any) {
     setSelectedRestaurant(restaurant);
@@ -61,8 +67,8 @@ export default function RestaurantsPage() {
           {/* Search Bar */}
           <div className="px-0.5 md:px-4 py-3">
             <label className="flex flex-col min-w-40 h-12 w-full">
-              <div className="flex w-full flex-1 items-stretch rounded-xl h-full border border-border">
-                <div className="text-muted-foreground flex items-center justify-center pl-4 rounded-l-xl">
+              <div className="flex w-full flex-1 items-stretch rounded h-full border border-border">
+                <div className="text-muted-foreground flex items-center justify-center pl-4 rounded-l">
                   <Search size={20} />
                 </div>
                 <input
@@ -70,36 +76,12 @@ export default function RestaurantsPage() {
                   placeholder="Search by name or cuisine"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-foreground focus:outline-none focus:ring-0 border-none bg-card h-full placeholder:text-muted-foreground px-4 pl-2 text-base font-normal leading-normal"
+                  className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r text-foreground focus:outline-none focus:ring-0 border-none bg-card h-full placeholder:text-muted-foreground px-4 pl-2 text-base font-normal leading-normal"
                 />
               </div>
             </label>
           </div>
 
-          {/* Filter Buttons */}
-          <div className="flex gap-3 px-0.5 md:px-4 py-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded bg-primary text-primary-foreground pl-4 pr-3">
-              <p className="text-sm font-medium leading-normal">Cuisine</p>
-              <span className="material-symbols-outlined text-xl">arrow_drop_down</span>
-            </button>
-            <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded bg-card border border-border pl-4 pr-3">
-              <p className="text-foreground text-sm font-medium leading-normal">Price Range</p>
-              <span className="material-symbols-outlined text-xl text-foreground">arrow_drop_down</span>
-            </button>
-            <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded bg-card border border-border pl-4 pr-3">
-              <p className="text-foreground text-sm font-medium leading-normal">Rating</p>
-              <span className="material-symbols-outlined text-xl text-foreground">arrow_drop_down</span>
-            </button>
-            <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded bg-card border border-border pl-4 pr-3">
-              <p className="text-foreground text-sm font-medium leading-normal">Nearby</p>
-              <span className="material-symbols-outlined text-xl text-foreground">arrow_drop_down</span>
-            </button>
-            <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded bg-card border border-border pl-4 pr-3">
-              <p className="text-foreground text-sm font-medium leading-normal">Open Now</p>
-              <span className="material-symbols-outlined text-xl text-foreground">arrow_drop_down</span>
-            </button>
-          </div>
-          <div className="h-2 bg-background"></div>
         </div>
 
         {/* Restaurant List */}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuthStore } from '@/store/useAuthStore';
+import { useToastStore } from '@/store/useToastStore';
 import { api } from '@/lib/api';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GlassButton } from '@/components/ui/GlassButton';
@@ -11,6 +12,7 @@ const ADMIN_USER_ID = process.env.NEXT_PUBLIC_ADMIN_USER_ID || '560058670';
 
 export default function AdminPage() {
   const { user } = useAuthStore();
+  const { error: showError, success: showSuccess } = useToastStore();
   const [activeTab, setActiveTab] = useState<'restaurants' | 'menus'>('restaurants');
   const [restaurants, setRestaurants] = useState<any[]>([]);
   const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null);
@@ -65,13 +67,13 @@ export default function AdminPage() {
       setFormData({ name: '', location: '', imageUrl: '', price: '', description: '' });
       loadRestaurants();
     } catch (error: any) {
-      alert(error.message || 'Failed to create restaurant');
+      showError(error.message || 'Failed to create restaurant');
     }
   }
 
   async function handleCreateMenuItem() {
     if (!selectedRestaurant) {
-      alert('Please select a restaurant first');
+      showError('Please select a restaurant first');
       return;
     }
 
@@ -87,7 +89,7 @@ export default function AdminPage() {
       setFormData({ name: '', location: '', imageUrl: '', price: '', description: '' });
       loadMenuItems(selectedRestaurant.id);
     } catch (error: any) {
-      alert(error.message || 'Failed to create menu item');
+      showError(error.message || 'Failed to create menu item');
     }
   }
 
@@ -98,7 +100,7 @@ export default function AdminPage() {
       await api.adminDeleteRestaurant(id);
       loadRestaurants();
     } catch (error: any) {
-      alert(error.message || 'Failed to delete restaurant');
+      showError(error.message || 'Failed to delete restaurant');
     }
   }
 
@@ -111,7 +113,7 @@ export default function AdminPage() {
         loadMenuItems(selectedRestaurant.id);
       }
     } catch (error: any) {
-      alert(error.message || 'Failed to delete menu item');
+      showError(error.message || 'Failed to delete menu item');
     }
   }
 

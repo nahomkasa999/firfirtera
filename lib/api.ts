@@ -68,6 +68,38 @@ export const api = {
   getRestaurant: (id: string) => apiRequest<{ restaurant: any }>(`/restaurants/${id}`),
   getMenuItems: (restaurantId: string) =>
     apiRequest<{ menuItems: any[] }>(`/menus/${restaurantId}`),
+  createRestaurant: (data: { name: string; location?: string }) =>
+    apiRequest<{ restaurant: any }>('/restaurants', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  createMenuItems: (restaurantId: string, menuItems: Array<{ name: string; price?: number; description?: string; imageUrl?: string; category?: string }>) =>
+    apiRequest<{ menuItems: any[]; count: number }>(`/restaurants/${restaurantId}/menu-items`, {
+      method: 'POST',
+      body: JSON.stringify({ menuItems }),
+    }),
+  analyzeMenuImage: async (imageFile: File) => {
+    const API_BASE_URL = getApiBaseUrl();
+    const initData = getInitData();
+    
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    const response = await fetch(`${API_BASE_URL}/gemini/analyze-menu`, {
+      method: 'POST',
+      headers: {
+        'X-Telegram-Init-Data': initData,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ message: 'Request failed' }));
+      throw new Error(error.message || `HTTP error! status: ${response.status}`);
+    }
+
+    return response.json() as Promise<{ menuItems: Array<{ name: string; price: number }> }>;
+  },
 
   // Meals
   getMeals: () => apiRequest<{ organized: any[]; joined: any[] }>('/meals'),

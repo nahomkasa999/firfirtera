@@ -1,10 +1,32 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useRestaurantStore } from '@/store/useRestaurantStore';
+import { useState } from 'react';
 
 export function BottomNav() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { createFormState } = useRestaurantStore();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const isFormComplete = createFormState !== null && pathname === '/create';
+
+  async function handleSubmitForm() {
+    if (!isFormComplete) return;
+    
+    setIsSubmitting(true);
+    try {
+      // Trigger form submission by navigating to create page with a flag
+      // The create page will handle the submission
+      const event = new CustomEvent('submitCreateForm');
+      window.dispatchEvent(event);
+    } catch (error) {
+      console.error('Failed to submit form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   const navItems = [
     { href: '/', icon: 'home', label: 'Home' },
@@ -22,6 +44,31 @@ export function BottomNav() {
           const isCreate = item.isCreate;
           
           if (isCreate) {
+            // If form is complete, show send button instead
+            if (isFormComplete) {
+              return (
+                <button
+                  key={item.href}
+                  onClick={handleSubmitForm}
+                  disabled={isSubmitting}
+                  className="flex flex-col items-center justify-center text-center -mt-6 disabled:opacity-50"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full mb-1">
+                    {isSubmitting ? (
+                      <div className="size-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    ) : (
+                      <span className="material-symbols-outlined text-white text-2xl">send</span>
+                    )}
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-xs font-medium text-primary">post</span>
+                    <span className="text-xs font-medium text-primary">meal</span>
+                  </div>
+                </button>
+              );
+            }
+            
+            // Default: show create button
             return (
               <Link
                 key={item.href}

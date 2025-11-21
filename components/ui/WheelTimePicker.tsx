@@ -111,7 +111,7 @@ export function WheelTimePicker({
     label?: string;
   }) => {
     const columnRef = useRef<HTMLDivElement>(null);
-    const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+    const scrollTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
     const itemHeight = 28;
     const containerHeight = 140;
     const centerOffset = (containerHeight - itemHeight) / 2;

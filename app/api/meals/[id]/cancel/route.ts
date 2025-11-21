@@ -1,14 +1,22 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedUserId } from '@/lib/userService';
 
 export async function POST(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const mealId = params.id;
-    // For now, use a default user ID. In production, get from auth
-    const defaultUserId = '123456789'; // From seed data
+    const userId = await getAuthenticatedUserId(prisma, request);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    const { id: mealId } = await params;
 
     const meal = await prisma.mealRequest.findUnique({
       where: { id: mealId },
@@ -22,7 +30,7 @@ export async function POST(
     }
 
     // Check if user is the organizer
-    if (meal.organizerId !== defaultUserId) {
+    if (meal.organizerId !== userId) {
       return NextResponse.json(
         { error: 'Only the organizer can cancel this meal' },
         { status: 403 }

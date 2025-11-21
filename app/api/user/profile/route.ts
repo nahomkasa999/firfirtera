@@ -1,13 +1,20 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedUserId } from '@/lib/userService';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    // For now, return a default user. In production, get from auth
-    const defaultUserId = '123456789'; // From seed data
+    const userId = await getAuthenticatedUserId(prisma, request);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
 
     const user = await prisma.user.findUnique({
-      where: { telegramId: defaultUserId },
+      where: { telegramId: userId },
     });
 
     if (!user) {
@@ -40,14 +47,21 @@ export async function GET() {
   }
 }
 
-export async function PUT(request: Request) {
+export async function PUT(request: NextRequest) {
   try {
-    // For now, use default user. In production, get from auth
-    const defaultUserId = '123456789';
+    const userId = await getAuthenticatedUserId(prisma, request);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
     const body = await request.json();
 
     const user = await prisma.user.update({
-      where: { telegramId: defaultUserId },
+      where: { telegramId: userId },
       data: {
         location: body.location,
         campus: body.campus,

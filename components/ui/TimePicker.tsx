@@ -145,13 +145,13 @@ export function TimePickerComponent({
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-50 p-3">
           <div style={{ minHeight: '180px', width: '100%', position: 'relative' }}>
-            <Picker
-              optionGroups={optionGroups}
-              valueGroups={pickerValue}
-              onChange={handleChange}
-              itemHeight={36}
-              height={180}
-            />
+            {(Picker as any)({
+              optionGroups,
+              valueGroups: pickerValue,
+              onChange: (value: any, key: string) => handleChange(value),
+              itemHeight: 36,
+              height: 180,
+            })}
             {/* Debug: Show current values */}
             <div className="text-xs text-muted-foreground mt-2 text-center">
               {JSON.stringify(pickerValue)}

@@ -16,17 +16,26 @@ interface Restaurant {
   menuItems?: MenuItem[];
 }
 
+interface CreateFormState {
+  restaurantId: string;
+  menuItemIds: string[];
+  date: string;
+  time: string;
+}
+
 interface RestaurantState {
   restaurants: Restaurant[];
   selectedRestaurant: Restaurant | null;
   selectedMenuItem: MenuItem | null; // Keep for backward compatibility
   selectedMenuItems: MenuItem[]; // New: multiple selections
   isLoading: boolean;
+  createFormState: CreateFormState | null; // Track form completion state
   setRestaurants: (restaurants: Restaurant[]) => void;
   setSelectedRestaurant: (restaurant: Restaurant | null) => void;
   setSelectedMenuItem: (item: MenuItem | null) => void; // Keep for backward compatibility
   setSelectedMenuItems: (items: MenuItem[]) => void;
   toggleMenuItem: (item: MenuItem) => void; // Toggle item in selection
+  setCreateFormState: (state: CreateFormState | null) => void;
   setLoading: (loading: boolean) => void;
 }
 
@@ -36,6 +45,7 @@ export const useRestaurantStore = create<RestaurantState>((set) => ({
   selectedMenuItem: null,
   selectedMenuItems: [],
   isLoading: false,
+  createFormState: null,
   setRestaurants: (restaurants) => set({ restaurants }),
   setSelectedRestaurant: (restaurant) => set({ selectedRestaurant: restaurant }),
   setSelectedMenuItem: (item) => set({ selectedMenuItem: item }),
@@ -48,6 +58,7 @@ export const useRestaurantStore = create<RestaurantState>((set) => ({
       return { selectedMenuItems: [...state.selectedMenuItems, item] };
     }
   }),
+  setCreateFormState: (state) => set({ createFormState: state }),
   setLoading: (loading) => set({ isLoading: loading }),
 }));
 

@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -36,18 +37,21 @@ model MealRequest {
   description        String
   totalCost          String    @map("total_cost")
   splitAmount        String    @map("split_amount")
+  contributionPerPerson String? @map("contribution_per_person") // For companion meals: amount each person commits to pay
   requiredParticipants Int     @map("required_participants")
   currentParticipants  Int     @default(0) @map("current_participants")
-  status             String @default("OPEN")
+  status             String @default("OPEN") // MealStatus: OPEN, FULL, COMPLETED, CANCELLED, EXPIRED
+  mealType           String @default("SPLIT") @map("meal_type") // "SPLIT" or "COMPANION"
   mealTime           DateTime  @map("meal_time")
   mealTimeText       String?   @map("meal_time_text")
+  location           String?   @map("location")
   groupInviteLink    String?   @map("group_invite_link")
   publicMessageId    String?   @map("public_message_id")
   confirmationMessageId String? @map("confirmation_message_id")
   confirmationChatId String?   @map("confirmation_chat_id")
   restaurantId       String?   @map("restaurant_id")
   menuItemId         String?   @map("menu_item_id")
-  genderPreferences  String?   @map("gender_preferences") // JSON stored as String in SQLite
+  genderPreferences  Json?     @map("gender_preferences") // {male: number, female: number}
   createdAt          DateTime  @default(now()) @map("created_at")
   expiresAt          DateTime  @map("expires_at")
 
@@ -91,8 +95,8 @@ model NoShow {
 model FeatureRequest {
   id            String   @id @default(uuid())
   userId        String   @map("user_id")
-  suggestion    String
-  status        String   @default("PENDING")
+  suggestion    String   @db.Text
+  status        String   @default("PENDING") // PENDING, POSTED, IMPLEMENTED, REJECTED
   voteMessageId String?  @map("vote_message_id")
   createdAt     DateTime @default(now()) @map("created_at")
   updatedAt     DateTime @updatedAt @map("updated_at")
@@ -121,8 +125,9 @@ model MenuItem {
   restaurantId  String    @map("restaurant_id")
   name          String
   price         Float?
-  description   String?
+  description   String?   @db.Text
   imageUrl      String?   @map("image_url")
+  category      String?   // "drink", "food", "fasting", "ye_fesik"
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
 
@@ -131,4 +136,9 @@ model MenuItem {
 
   @@map("menu_items")
 }
+
+// Status fields use String type
+// MealStatus values: OPEN, FULL, COMPLETED, CANCELLED, EXPIRED
+// ParticipantStatus values: PENDING, CONFIRMED, NO_SHOW
+// FeatureRequestStatus values: PENDING, POSTED, IMPLEMENTED, REJECTED
 
