@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  telegramId        String   @id @map("telegram_id")
+  username          String?
+  firstName         String?  @map("first_name")
+  noShowCount       Int      @default(0) @map("no_show_count")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  location          String?
+  campus            String?
+  gender            String?
+  collegeYear       String?  @map("college_year")
+  department        String?
+  religion          String?
+
+  organizedMeals    MealRequest[] @relation("Organizer")
+  participants      Participant[]
+  noShows           NoShow[]      @relation("NoShowUser")
+  reportedNoShows   NoShow[]      @relation("Reporter")
+  featureRequests   FeatureRequest[]
+
+  @@map("users")
+}
+
+model MealRequest {
+  id                 String    @id @default(uuid())
+  organizerId        String    @map("organizer_id")
+  description        String
+  totalCost          String    @map("total_cost")
+  splitAmount        String    @map("split_amount")
+  requiredParticipants Int     @map("required_participants")
+  currentParticipants  Int     @default(0) @map("current_participants")
+  status             String @default("OPEN")
+  mealTime           DateTime  @map("meal_time")
+  mealTimeText       String?   @map("meal_time_text")
+  groupInviteLink    String?   @map("group_invite_link")
+  publicMessageId    String?   @map("public_message_id")
+  confirmationMessageId String? @map("confirmation_message_id")
+  confirmationChatId String?   @map("confirmation_chat_id")
+  restaurantId       String?   @map("restaurant_id")
+  menuItemId         String?   @map("menu_item_id")
+  genderPreferences  String?   @map("gender_preferences") // JSON stored as String in SQLite
+  createdAt          DateTime  @default(now()) @map("created_at")
+  expiresAt          DateTime  @map("expires_at")
+
+  organizer          User          @relation("Organizer", fields: [organizerId], references: [telegramId])
+  restaurant         Restaurant?   @relation(fields: [restaurantId], references: [id])
+  menuItem           MenuItem?     @relation(fields: [menuItemId], references: [id])
+  participants       Participant[]
+  noShows            NoShow[]
+
+  @@map("meal_requests")
+}
+
+model Participant {
+  id            String          @id @default(uuid())
+  mealRequestId String          @map("meal_request_id")
+  userId        String          @map("user_id")
+  joinedAt      DateTime        @default(now()) @map("joined_at")
+  status        String @default("PENDING")
+
+  mealRequest   MealRequest     @relation(fields: [mealRequestId], references: [id], onDelete: Cascade)
+  user          User            @relation(fields: [userId], references: [telegramId])
+
+  @@unique([mealRequestId, userId])
+  @@map("participants")
+}
+
+model NoShow {
+  id            String   @id @default(uuid())
+  mealRequestId String   @map("meal_request_id")
+  userId        String   @map("user_id")
+  reportedBy    String   @map("reported_by")
+  reportedAt    DateTime @default(now()) @map("reported_at")
+
+  mealRequest   MealRequest @relation(fields: [mealRequestId], references: [id], onDelete: Cascade)
+  user          User        @relation("NoShowUser", fields: [userId], references: [telegramId])
+  reporter      User        @relation("Reporter", fields: [reportedBy], references: [telegramId])
+
+  @@map("no_shows")
+}
+
+model FeatureRequest {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  suggestion    String
+  status        String   @default("PENDING")
+  voteMessageId String?  @map("vote_message_id")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  user          User     @relation(fields: [userId], references: [telegramId])
+
+  @@map("feature_requests")
+}
+
+model Restaurant {
+  id          String    @id @default(uuid())
+  name        String
+  location    String?
+  imageUrl    String?   @map("image_url")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  menuItems   MenuItem[]
+  mealRequests MealRequest[]
+
+  @@map("restaurants")
+}
+
+model MenuItem {
+  id            String    @id @default(uuid())
+  restaurantId  String    @map("restaurant_id")
+  name          String
+  price         Float?
+  description   String?
+  imageUrl      String?   @map("image_url")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  restaurant    Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  mealRequests  MealRequest[]
+
+  @@map("menu_items")
+}
+
