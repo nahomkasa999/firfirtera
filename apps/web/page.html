@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome - Social Dining App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f47b25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221710",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans Ethiopic", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-primary font-display text-background-dark">
+<div class="flex h-full min-h-screen w-full flex-col overflow-hidden">
+<header class="flex items-center justify-center p-6 pt-12">
+<div class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-4xl">restaurant</span>
+<span class="text-2xl font-bold">እንብላ</span>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center justify-center text-center px-6">
+<div class="relative w-full max-w-xs aspect-square mb-8">
+<div class="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="A top-down view of an Agalgil (Ethiopian food platter) on a table." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDA9reIfuIyWNhE5jLWrTS3htU32d2G0P9o_ediKbwWedHGdUcSBI-PERUZ4o0wbxHqn7jL6qNAdUsmVQ38CMCT4u7lSls6USM41D4gHxEOXqrxPVbZh0EJt9Noro1O70Vi34dxM9JZiDV4TuRb1aCD45sK_vcKXp-LJybfvoiV6D7ZZHEshmqvkTQ-YmhnumRO08H-VJGdt4QCXsmr-e0wl2I62plfKFZ654XwP8HRLyOTINWYKb5TO1ubun4Wb1GaIE0dpN-FcA");'></div>
+</div>
+<h1 class="text-5xl sm:text-6xl font-extrabold tracking-tighter">Never eat alone.</h1>
+</main>
+<footer class="p-6 pb-12">
+<div class="flex flex-col gap-4">
+<button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-6 bg-background-light text-background-dark text-lg font-bold shadow-lg transition-transform active:scale-95">
+<span class="truncate">Find a Meal Nearby</span>
+</button>
+<a class="text-center text-sm font-medium text-black/70" href="#">I already have an account</a>
+</div>
+</footer>
+</div>
+</body></html>
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "text-light": "#1c130d",
+              "text-dark": "#f8f7f5",
+              "muted-light": "#9c6c49",
+              "muted-dark": "#a38b77",
+              "border-light": "#e8d9ce",
+              "border-dark": "#3c2a1d",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark p-4">
+<div class="flex w-full max-w-sm flex-col items-center justify-center">
+<div class="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-4xl text-primary">
+                    restaurant
+                </span>
+</div>
+<h1 class="text-text-light dark:text-text-dark text-[32px] font-bold leading-tight tracking-tight text-center">Welcome Back!</h1>
+<p class="text-muted-light dark:text-muted-dark text-base font-normal leading-normal text-center pt-2">Log in to find your next meal.</p>
+<div class="mt-8 w-full space-y-4">
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Phone Number</p>
+<div class="relative flex w-full items-center">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pr-2 border-r border-border-light dark:border-border-dark">
+<span class="text-text-light dark:text-text-dark text-base font-normal">+1</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3.5 pl-14 text-base font-normal leading-normal" placeholder="555-123-4567" value=""/>
+</div>
+</label>
+</div>
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3.5 rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+<button class="text-muted-light dark:text-muted-dark flex border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark items-center justify-center px-3.5 rounded-r border-l-0 hover:bg-primary/10">
+<span class="material-symbols-outlined">
+                                    visibility_off
+                                </span>
+</button>
+</div>
+</label>
+</div>
+</div>
+<a class="text-muted-light dark:text-muted-dark text-sm font-medium leading-normal self-end mt-3 hover:text-primary dark:hover:text-primary underline" href="#">Forgot Password?</a>
+<button class="flex h-14 w-full items-center justify-center rounded-full bg-primary text-white text-base font-bold leading-normal mt-8 hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30">
+                Log In
+            </button>
+<div class="relative flex py-1 items-center w-full mt-6">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="flex-shrink mx-4 text-muted-light dark:text-muted-dark text-sm font-normal">Or continue with</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="flex flex-col gap-3 w-full mt-6">
+<button class="flex h-14 w-full items-center justify-center gap-3 rounded-full border border-border-light dark:border-border-dark bg-transparent text-text-light dark:text-text-dark text-base font-bold leading-normal hover:bg-primary/5 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-colors">
+<svg class="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span>Sign in with Google</span>
+</button>
+<button class="flex h-14 w-full items-center justify-center gap-3 rounded-full border border-border-light dark:border-border-dark bg-transparent text-text-light dark:text-text-dark text-base font-bold leading-normal hover:bg-primary/5 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-colors">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#29B6F6"></path>
+<path d="M17.88 8.08L15.86 17.62C15.71 18.3 15.31 18.47 14.74 18.15L11.64 15.87L10.14 17.31C9.98 17.47 9.84 17.61 9.53 17.61L9.75 14.45L15.51 9.25C15.76 9.03 15.45 8.9 15.12 9.13L8 13.61L4.94 12.65C4.28 12.45 4.26 11.98 5.08 11.65L17.02 7.05C17.57 6.85 18.06 7.18 17.88 8.08Z" fill="white"></path>
+</svg>
+<span>Sign in with Telegram</span>
+</button>
+</div>
+<div class="mt-8 text-center">
+<p class="text-muted-light dark:text-muted-dark text-sm font-normal leading-normal">
+                    Don't have an account? 
+                    <a class="font-bold text-primary hover:underline" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+
+</body></html>
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "text-light": "#1c130d",
+              "text-dark": "#f8f7f5",
+              "muted-light": "#9c6c49",
+              "muted-dark": "#a38b77",
+              "border-light": "#e8d9ce",
+              "border-dark": "#3c2a1d",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark p-4">
+<div class="flex w-full max-w-sm flex-col items-center justify-center">
+<div class="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-4xl text-primary">
+                    restaurant
+                </span>
+</div>
+<h1 class="text-text-light dark:text-text-dark text-[32px] font-bold leading-tight tracking-tight text-center">Welcome Back!</h1>
+<p class="text-muted-light dark:text-muted-dark text-base font-normal leading-normal text-center pt-2">Log in to find your next meal.</p>
+<div class="mt-8 w-full space-y-4">
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Phone Number</p>
+<div class="relative flex w-full items-center">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pr-2 border-r border-border-light dark:border-border-dark">
+<span class="text-text-light dark:text-text-dark text-base font-normal">+1</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3.5 pl-14 text-base font-normal leading-normal" placeholder="555-123-4567" value=""/>
+</div>
+</label>
+</div>
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-muted-light dark:placeholder:text-muted-dark p-3.5 rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+<button class="text-muted-light dark:text-muted-dark flex border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark items-center justify-center px-3.5 rounded-r border-l-0 hover:bg-primary/10">
+<span class="material-symbols-outlined">
+                                    visibility_off
+                                </span>
+</button>
+</div>
+</label>
+</div>
+</div>
+<a class="text-muted-light dark:text-muted-dark text-sm font-medium leading-normal self-end mt-3 hover:text-primary dark:hover:text-primary underline" href="#">Forgot Password?</a>
+<button class="flex h-14 w-full items-center justify-center rounded-full bg-primary text-white text-base font-bold leading-normal mt-8 hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30">
+                Log In
+            </button>
+<div class="relative flex py-1 items-center w-full mt-6">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="flex-shrink mx-4 text-muted-light dark:text-muted-dark text-sm font-normal">Or continue with</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="flex flex-col gap-3 w-full mt-6">
+<button class="flex h-14 w-full items-center justify-center gap-3 rounded-full border border-border-light dark:border-border-dark bg-transparent text-text-light dark:text-text-dark text-base font-bold leading-normal hover:bg-primary/5 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-colors">
+<svg class="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span>Sign in with Google</span>
+</button>
+<button class="flex h-14 w-full items-center justify-center gap-3 rounded-full border border-border-light dark:border-border-dark bg-transparent text-text-light dark:text-text-dark text-base font-bold leading-normal hover:bg-primary/5 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-colors">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#29B6F6"></path>
+<path d="M17.88 8.08L15.86 17.62C15.71 18.3 15.31 18.47 14.74 18.15L11.64 15.87L10.14 17.31C9.98 17.47 9.84 17.61 9.53 17.61L9.75 14.45L15.51 9.25C15.76 9.03 15.45 8.9 15.12 9.13L8 13.61L4.94 12.65C4.28 12.45 4.26 11.98 5.08 11.65L17.02 7.05C17.57 6.85 18.06 7.18 17.88 8.08Z" fill="white"></path>
+</svg>
+<span>Sign in with Telegram</span>
+</button>
+</div>
+<div class="mt-8 text-center">
+<p class="text-muted-light dark:text-muted-dark text-sm font-normal leading-normal">
+                    Don't have an account? 
+                    <a class="font-bold text-primary hover:underline" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+
+</body></html>
+
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up - Step 1 (Credentials)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "text-light": "#2C2C2E",
+              "text-dark": "#f8f7f5",
+              "border-light": "#e8d9ce",
+              "border-dark": "#3a2d23",
+              "placeholder-light": "#9c6c49",
+              "placeholder-dark": "#9c6c49"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden antialiased">
+<main class="flex flex-col flex-grow items-center justify-center p-6 sm:p-8">
+<div class="w-full max-w-md mx-auto">
+<div class="text-center">
+<h1 class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-tight">Create your account</h1>
+<p class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal pt-2">Step 1 of 3: Credentials</p>
+</div>
+<div class="mt-8">
+<form action="#" class="space-y-5" method="POST">
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="name">Name or Username</label>
+<input class="form-input block w-full rounded-lg border-0 py-3.5 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="name" name="name" placeholder="Enter your name or username" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="phone-number">Phone Number</label>
+<div class="flex rounded-lg shadow-sm border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary focus-within:border-primary">
+<div class="relative">
+<select class="form-select h-full py-0 pl-3 pr-8 border-transparent bg-transparent text-text-light dark:text-text-dark focus:border-transparent focus:ring-0 sm:text-sm rounded-l-lg" id="country-code" name="country-code">
+<option>+1</option>
+<option>+44</option>
+<option>+91</option>
+</select>
+</div>
+<input class="form-input block w-full flex-1 border-0 border-l border-border-light dark:border-border-dark bg-transparent py-3.5 pl-3 text-text-light dark:text-text-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-0 sm:text-sm sm:leading-6 rounded-r-lg" id="phone-number" name="phone-number" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="password">Create Password</label>
+<div class="relative">
+<input class="form-input block w-full rounded-lg border-0 py-3.5 pr-10 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="password" name="password" placeholder="Create a password" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3" type="button">
+<span class="material-symbols-outlined text-text-light/60 dark:text-text-dark/60" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-lg bg-primary px-3 py-4 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" type="submit">Next</button>
+</div>
+</form>
+<div class="relative my-6">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="bg-background-light dark:bg-background-dark px-2 text-text-light/80 dark:text-text-dark/80">Or continue with</span>
+</div>
+</div>
+<div>
+<a class="flex w-full items-center justify-center gap-3 rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-white/10 px-3 py-3.5 text-sm font-semibold text-text-light dark:text-text-dark shadow-sm hover:bg-white/80 dark:hover:bg-white/20" href="#">
+<img alt="Google logo" class="h-5 w-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYVuNFOOInwHVhBj6OgOcseyqB1EBh-4fE3_p9x3s3jOjMQBxASCG012IUwuZx79nMKnxhDBkpeJKQ_lMHpN_WMfCBhD11heXtGDS1FW422KhIyr-I6UYq46SlOo87stHVkeD1uXbqyJEqvDXolOkNet8BnPnUCJ__YNEksCrsEzvR949xKvT4RvZAMwsLnIT8X7P7XmwIpowEG1Lu-mYZnqXTOQpaht8O6JzvlQ0jn20c_j346KdZi6RKx13RhndebR4ZQmhUw"/>
+<span>Sign up with Google</span>
+</a>
+</div>
+<p class="mt-6 text-center text-xs text-text-light/70 dark:text-text-dark/70">
+                        By continuing, you agree to our<br/>
+<a class="font-medium text-primary hover:text-primary/90" href="#">Terms of Service</a> and <a class="font-medium text-primary hover:text-primary/90" href="#">Privacy Policy</a>.
+                    </p>
+</div>
+</div>
+</main>
+<footer class="py-6 px-4 text-center">
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">
+                Already have an account? 
+                <a class="font-semibold text-primary hover:text-primary/90" href="#">Sign In</a>
+</p>
+</footer>
+</div>
+</body></html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up - Step 2 (Basic Profile)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f47b25",
+            "background-light": "#f8f7f5",
+            "background-dark": "#221710",
+            "text-light": "#2C2C2E",
+            "text-dark": "#f8f7f5",
+            "border-light": "#e8d9ce",
+            "border-dark": "#3a2d23",
+            "placeholder-light": "#9c6c49",
+            "placeholder-dark": "#9c6c49"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>body {
+    min-height: max(884px, 100dvh)
+    }
+.form-select {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCaYAsLt5C6E2xW5m2QQA-xpwK9V96zSKgl3KT5-KhwUh_op7OJR1jIw_fCM7Af7aP7E4WdBQkDlUiDpNKRCuBnfPurTVLMZEWkpwTyjhYwV7xpcPT_BCGQCnl0w1KFM7ve_w6sU2J5_O1V28vD1vO3Tcfu2lDqj2WnkFp73h_b6m7uIGfz6ZZhA0Adf41vIMQoGiDl4UvH9YMH6QidnCYMozu-RdH7Jhv__p1LawBMf3m2GhumgkXrKZ0VkxHOEHXmqjcFJoP2bA)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden antialiased">
+<main class="flex flex-col flex-grow items-center justify-center p-6 sm:p-8">
+<div class="w-full max-w-md mx-auto">
+<div class="text-center">
+<h1 class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-tight">Tell us about yourself</h1>
+<p class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal pt-2">Complete your profile to get started.</p>
+</div>
+<div class="mt-10">
+<form action="#" class="space-y-6" method="POST">
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="gender">Gender</label>
+<select class="form-select block w-full rounded-lg border-0 py-3.5 pl-3 pr-10 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="gender" name="gender">
+<option value="">Select your gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="non-binary">Non-binary</option>
+<option value="prefer-not-to-say">Prefer not to say</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="age">Age</label>
+<input class="form-input block w-full rounded-lg border-0 py-3.5 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="age" name="age" placeholder="Enter your age" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="work">Work</label>
+<input class="form-input block w-full rounded-lg border-0 py-3.5 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="work" name="work" placeholder="e.g. Google, Student, etc." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium leading-6 text-text-light dark:text-text-dark" for="occupation">Occupation</label>
+<input class="form-input block w-full rounded-lg border-0 py-3.5 text-text-light dark:text-text-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-transparent" id="occupation" name="occupation" placeholder="e.g. Software Engineer, Designer" type="text"/>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-lg bg-primary px-3 py-4 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary mt-4" type="submit">Complete Profile</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="py-6 px-4 text-center">
+<div class="h-5"></div>
+</footer>
+</div>
+
+</body></html>
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home / Discovery (List View)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#F97316",
+            "background-light": "#f8fafc",
+            "background-dark": "#0B1120",
+            "surface-light": "#ffffff",
+            "surface-dark": "#181E2D"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative min-h-screen w-full">
+<header class="sticky top-0 z-10 bg-background-light/90 backdrop-blur-sm pt-4">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-slate-800">
+<span class="material-symbols-outlined !text-3xl text-primary">restaurant</span>
+</div>
+<h1 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Discover</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-slate-800 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined !text-2xl">map</span>
+</button>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 flex border-none bg-slate-100 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined !text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-slate-900 focus:outline-0 focus:ring-0 border-none bg-slate-100 focus:border-none h-full placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search events or cuisines" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-primary pl-3 pr-2 text-white">
+<p class="text-sm font-medium leading-normal">Treat/Split</p>
+<span class="material-symbols-outlined !text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 pl-3 pr-2 text-slate-600">
+<p class="text-sm font-medium leading-normal">Distance</p>
+<span class="material-symbols-outlined !text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 pl-3 pr-2 text-slate-600">
+<p class="text-sm font-medium leading-normal">Time</p>
+<span class="material-symbols-outlined !text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 pl-3 pr-2 text-slate-600">
+<p class="text-sm font-medium leading-normal">Cuisine</p>
+<span class="material-symbols-outlined !text-lg">arrow_drop_down</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-4 p-4 pb-28">
+<div class="@container">
+<div class="flex flex-col items-stretch justify-start rounded-md shadow-sm bg-surface-light p-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col items-start gap-3 w-full">
+<div class="flex justify-between w-full">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 text-base font-bold leading-tight tracking-[-0.015em]">Firfir</p>
+<p class="text-slate-500 text-sm font-normal leading-normal">Hosted by Maria</p>
+<p class="text-orange-600 text-sm font-semibold leading-normal">$15/person</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full px-3 self-start">
+<p class="text-orange-600 text-xs font-bold leading-normal">Split</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 w-full">
+<span class="text-sm">Ethiopian</span>
+<span class="text-sm">7:00 PM</span>
+<span class="text-sm">1.2 mi</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5 self-center">
+<div class="flex -space-x-2">
+<img alt="Profile picture of Maria" class="inline-block size-6 rounded-full ring-2 ring-surface-light object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 ring-2 ring-surface-light"></div>
+</div>
+<p class="text-slate-700 text-sm font-medium">2/4 joined</p>
+</div>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col items-stretch justify-start rounded-md shadow-sm bg-surface-light p-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col items-start gap-3 w-full">
+<div class="flex justify-between w-full">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 text-base font-bold leading-tight tracking-[-0.015em]">Kurt</p>
+<p class="text-slate-500 text-sm font-normal leading-normal">Hosted by Alessandro</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full px-3 self-start">
+<p class="text-orange-600 text-xs font-bold leading-normal">Treat</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 w-full">
+<span class="text-sm">Ethiopian</span>
+<span class="text-sm">8:00 PM</span>
+<span class="text-sm">0.8 mi</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5 self-center">
+<div class="flex -space-x-2">
+<img alt="Profile picture of Alessandro" class="inline-block size-6 rounded-full ring-2 ring-surface-light object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoOB6zY_QvNYXvdflJ_v6yVH-CmhlRlhoFXwIYaRhY3PV3Uo9lY5BpLX05cxgVM15LbMNOYZ-nEL4zzsa9ZE5v0RLXBhDE4rU3mYLBFK4V6umTWeBfAYkzz8oMmJVoV2rfFhINvaQ3CrsmCl7YIVZBUtXdyBPYvz_DCqOCU0XKH5YoUFQBdQRtctkYlXGsFEx-n9h-PD0aMGyhO82kxmOGYXlUY11C7VS0zKnG2jiXjlqC-QK6_Mj56XNcPzFNrv1f9OvrFOmVkA"/>
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 ring-2 ring-surface-light"></div>
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 ring-2 ring-surface-light"></div>
+</div>
+<div class="flex items-baseline gap-1">
+<p class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em]">3/5</p>
+<span class="text-slate-500 text-xs font-medium">joined</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col items-stretch justify-start rounded-md shadow-sm bg-surface-light p-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col items-start gap-3 w-full">
+<div class="flex justify-between w-full">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 text-base font-bold leading-tight tracking-[-0.015em]">Kitfo</p>
+<p class="text-slate-500 text-sm font-normal leading-normal">Hosted by Chloe</p>
+<p class="text-orange-600 text-sm font-semibold leading-normal">$20/person</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full px-3 self-start">
+<p class="text-orange-600 text-xs font-bold leading-normal">Split</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 w-full">
+<span class="text-sm">Ethiopian</span>
+<span class="text-sm">1:00 PM</span>
+<span class="text-sm">2.5 mi</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5 self-center">
+<div class="flex -space-x-2">
+<img alt="Profile picture of Chloe" class="inline-block size-6 rounded-full ring-2 ring-surface-light object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyWK_krqQCvSejtk1R26lWTN33mL49Swq1XEvSaP1WtkC2CWHBKkoNul_ze2cAA71JIl4rYSaF6OmeFV0Q75zaPtumVQbsi8jS7YvPl3aoPACFoScA0enA-VSUsdRDThh9znaCHqAOHBJk_MDJLO2zc0Ol8fc05iNBNNQknXAZtoUQFvIq5u-NaAMjKi7ECyjQECZ9IMv9vdDhKaKTLuTgeGbgN-tQDO6betety8I3431LjxNmhXkvBHduT1mcdFNeBZgCOC9XIw"/>
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 ring-2 ring-surface-light"></div>
+</div>
+<p class="text-slate-700 text-sm font-medium">1/3 joined</p>
+</div>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col items-stretch justify-start rounded-md shadow-sm bg-surface-light p-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col items-start gap-3 w-full">
+<div class="flex justify-between w-full">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 text-base font-bold leading-tight tracking-[-0.015em]">Doro Wat</p>
+<p class="text-slate-500 text-sm font-normal leading-normal">Hosted by Kenji</p>
+<p class="text-orange-600 text-sm font-semibold leading-normal">$30/person</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full px-3 self-start">
+<p class="text-orange-600 text-xs font-bold leading-normal">Split</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 w-full">
+<span class="text-sm">Ethiopian</span>
+<span class="text-sm">7:30 PM</span>
+<span class="text-sm">3.1 mi</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5 self-center">
+<div class="flex -space-x-2">
+<img alt="Profile picture of Kenji" class="inline-block size-6 rounded-full ring-2 ring-surface-light object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"/>
+</div>
+<p class="text-slate-700 text-sm font-medium">1/4 joined</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-10 grid h-20 grid-cols-5 items-center border-t border-slate-200 bg-surface-light/90 backdrop-blur-sm">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-xs">My Events</span>
+</button>
+<div class="flex justify-center">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined !text-4xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-xs">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meal Detail - Light Theme</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f47b25",
+            "background-light": "#f8f7f5",
+            "background-dark": "#221710",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1.5rem", "xl": "2.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 p-4 backdrop-blur-sm">
+<button class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-stone-900">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="flex-1 text-center">
+<h2 class="text-lg font-bold leading-tight tracking-tight text-stone-900">Meal Detail</h2>
+</div>
+<div class="w-10"></div>
+</div>
+<main class="flex-grow pb-28">
+<div class="px-4">
+<div class="min-h-60 w-full overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat sm:min-h-80" data-alt="Close-up of three delicious-looking street tacos on a plate." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVgocUIoV6uAWCmb6q-NHUVYnCJyhyAZSmlpzUUAXbZxoVcjUitlOB6zp6yMWThcNeOCYXzDqgupUNGtt2Yyk_cx3A-z35pUa03habIMnALEVcjAZE6HJRKMwOlqtJiAIe63iBkZ_uj1ygwJwX4lt-52NARqfDxSEvIgeYTA9GFmWwaEE2MBzhmAzYumwarNVGOY4ITrEMwh79-9EEA7ZIJofQp_78dGZm2ACwE2E-7GUsjw8DIM2t33KrISISjQaa0bAiNoaB1A");'></div>
+</div>
+<div class="px-4 pb-3 pt-6">
+<h1 class="text-3xl font-bold leading-tight tracking-tight text-stone-900">Firfire</h1>
+<p class="mt-1 text-base text-stone-500">Ethiopian Cuisine</p>
+</div>
+<div class="px-4 pt-2">
+<div class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+<div class="grid grid-cols-2 gap-y-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-md bg-primary/20">
+<span class="material-symbols-outlined text-primary">group</span>
+</div>
+<div>
+<p class="text-sm font-medium text-stone-500">Status</p>
+<p class="font-bold text-stone-900">1/3 Joined</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-md bg-primary/20">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<p class="text-sm font-medium text-stone-500">Time</p>
+<p class="font-bold text-stone-900">nege, mata 1:00LT</p>
+</div>
+</div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-md bg-primary/20">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="text-sm font-medium text-stone-500">Location</p>
+<p class="font-bold text-stone-900">Local Ethiopian Restaurant</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="mx-4 my-6 border-stone-200/60"/>
+<div class="px-4">
+<h3 class="mb-4 text-xl font-bold text-stone-900">Payment</h3>
+<div class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-primary/20">
+<span class="material-symbols-outlined text-2xl text-primary">payments</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-stone-600">Each person pays</p>
+<p class="text-lg font-bold text-stone-900">100.00 Birr</p>
+</div>
+</div>
+<hr class="my-3 border-stone-200/60"/>
+<div class="space-y-1 text-sm text-stone-600">
+<p><span class="font-semibold">Total money:</span> 300.00 Birr (3 people)</p>
+<p>Order food together, split the bill</p>
+</div>
+</div>
+</div>
+<hr class="mx-4 my-6 border-stone-200/60"/>
+<div class="px-4">
+<h3 class="mb-3 text-xl font-bold text-stone-900">About this meal</h3>
+<p class="text-base leading-relaxed text-stone-600">
+          Let's enjoy some delicious and spicy Firfire! This is a classic Ethiopian breakfast dish, perfect for sharing. We'll eat together family-style and have a great conversation. Looking forward to meeting some new people!
+      </p>
+</div>
+<hr class="mx-4 my-6 border-stone-200/60"/>
+<div class="px-4">
+<h3 class="mb-4 text-xl font-bold text-stone-900">The Host</h3>
+<div class="flex items-center justify-between gap-4 bg-background-light">
+<div class="flex items-center gap-4">
+<div class="h-14 w-14 rounded-full bg-cover bg-center bg-no-repeat" data-alt="Profile picture of Sarah, a smiling woman with blonde hair." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyutrKBq2vLmXuJvXGI_8K6ieGO3IQJOncFvG-705pZtaA88t6RS_84XN8F4XpE3ePkhOLI0rreEybO5WMSYZ2-gLrPVudEZkk9ysWmhlGhsI_dugyMthX7l2Bi6-JfbULlHVslcqqKLKRjFPnMBkuZolel6MGbYHyPrLxBckzRI3kq319iFUjFLdflTPqH3tguOSp8bMySggxIFVQwqUiRTyyDREClmiVbKCbsDbPMQw5WOujeQnhRxjaSSEDjWZig26gG4r_fw");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-base font-semibold leading-normal text-stone-900">Sarah</p>
+<div class="flex items-center gap-1 text-stone-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="text-sm font-normal leading-normal">New Host</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background-light via-background-light to-transparent p-4">
+<button class="flex h-14 w-full items-center justify-center rounded-lg bg-primary text-lg font-bold text-white shadow-lg transition-colors hover:bg-primary/90">
+          Join
+      </button>
+</footer>
+</div>
+
+</body></html>
+
+
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invitation Request Sent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "content-light": "#1c130d",
+              "content-dark": "#f8f7f5",
+              "subtle-light": "#e8d9ce",
+              "subtle-dark": "#3c2e25",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col justify-end bg-content-light/40 dark:bg-content-dark/40" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<!-- This div represents the blurred background screen content -->
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center blur-sm" data-alt="Abstract representation of a mobile app screen with placeholder content cards." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBKDjaoKorTwsyNMKxlN9z2TyBkNekEKjoO8SG58hW8Oig0kmCg3MQqd5I-yoWQWyDr31fEi5dkCnKZPE0LyFKgZMbi63PjgFEIv5_WgdrtyGAqwsnzrR9yLsV4r1QMuI7ggFlhouBsW0LxZ1BRMowabTzG5wXmpAYH1WsjyKE8-_GsOJHTEHffuk2Hb3M0E25x1XvbmPTJ9Jvg98UsL68pWzr29XZC42d35K-oHYBZ27MShYDa7Q5vCwF8MACg-cSuJWhS_wo8g')"></div>
+</div>
+<!-- Bottom Sheet / Modal -->
+<div class="relative z-10 flex flex-col items-stretch rounded-t-lg bg-background-light dark:bg-background-dark">
+<!-- Handle -->
+<div class="flex h-5 w-full items-center justify-center pt-3">
+<div class="h-1 w-9 rounded-full bg-subtle-light dark:bg-subtle-dark"></div>
+</div>
+<!-- Icon -->
+<div class="flex w-full justify-center pt-8 pb-4">
+<div class="flex h-20 w-20 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-5xl text-primary">send</span>
+</div>
+</div>
+<!-- Headline Text -->
+<h1 class="text-content-light dark:text-content-dark tracking-tight text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-2">Request Sent!</h1>
+<!-- Body Text -->
+<p class="text-content-light dark:text-content-dark text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">The host has been notified. We'll let you know once they respond.</p>
+<!-- Spacer -->
+<div class="h-5"></div>
+<!-- Button Group -->
+<div class="flex justify-center">
+<div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-content-light dark:text-content-dark text-base font-bold leading-normal tracking-[0.015em] w-full">
+<span class="truncate">View My Requests</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-transparent text-content-light dark:text-content-dark text-base font-bold leading-normal tracking-[0.015em] w-full">
+<span class="truncate">Done</span>
+</button>
+</div>
+</div>
+<!-- Bottom safe area padding -->
+<div class="h-8"></div>
+</div>
+</div>
+</body></html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Meal Event (Split Mode)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F97316",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0B1120",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#181E2D"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", // Sharper edges
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative min-h-screen w-full">
+<header class="sticky top-0 z-10 bg-background-light/90 backdrop-blur-sm pt-4">
+<div class="flex items-center p-4 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-start">
+<button class="flex items-center justify-center size-10 rounded-full text-slate-800">
+<span class="material-symbols-outlined !text-2xl">arrow_back_ios_new</span>
+</button>
+</div>
+<h1 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Create Meal Event</h1>
+<div class="flex w-10 shrink-0 items-center justify-end"></div>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4 pb-32">
+<div class="flex flex-col gap-3">
+<label class="text-slate-800 text-base font-semibold">Mode</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 h-24 rounded-lg border-2 border-primary bg-orange-50 text-primary">
+<span class="material-symbols-outlined !text-3xl">card_giftcard</span>
+<span class="font-semibold text-sm">Split (Treat Group)</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 h-24 rounded-lg border border-slate-200 bg-surface-light text-slate-500">
+<span class="material-symbols-outlined !text-3xl">payments</span>
+<span class="font-semibold text-sm">Companionship</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-6" id="split-form">
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="food-name">Food Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">restaurant</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="food-name" placeholder="e.g., Pizza Night" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="location">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="location" placeholder="Enter restaurant or address" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="time-split">Time</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">schedule</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="time-split" placeholder="Select date and time" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="people-joining">Number of people joining</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">group</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="people-joining" placeholder="e.g., 4" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="gender">Gender Preference (Optional)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">wc</span>
+<select class="form-select w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-10 text-slate-900 focus:border-primary focus:ring-primary" id="gender">
+<option>No Preference</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="description">Description (Optional)</label>
+<textarea class="form-textarea w-full rounded-lg border border-slate-200 bg-surface-light p-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="description" placeholder="Add a short note about the event" rows="4"></textarea>
+</div>
+</div>
+<div class="hidden flex-col gap-6" id="companionship-form">
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="contribution">Birr each contributing</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">Br</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="contribution" placeholder="e.g., 500" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="people-looking">Number of people looking</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">group_add</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="people-looking" placeholder="e.g., 3" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-800 text-base font-semibold" for="time-companionship">Time</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">schedule</span>
+<input class="form-input w-full h-12 rounded-lg border border-slate-200 bg-surface-light pl-10 pr-4 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary" id="time-companionship" placeholder="Select date and time" type="text"/>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-light/80 backdrop-blur-sm border-t border-slate-200">
+<button class="w-full h-12 flex items-center justify-center rounded-lg bg-primary text-white text-base font-bold shadow-sm">
+                Create Meal
+            </button>
+</div>
+</div>
+
+</body></html>
+
+
+
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Events - Upcoming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "content-light": "#1c130d",
+              "content-dark": "#f8f7f5",
+              "subtle-light": "#e8d9ce",
+              "subtle-dark": "#3c2e25",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+<div class="flex min-h-screen flex-col" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<header class="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-subtle-light dark:border-subtle-dark bg-background-light/80 dark:bg-background-dark/80 px-4 backdrop-blur-sm">
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold">My Events</h1>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+</button>
+</header>
+<main class="flex-1 px-4 pt-6">
+<div class="flex w-full items-center justify-center">
+<div class="flex items-center gap-2 rounded-full bg-subtle-light/50 p-1 dark:bg-subtle-dark/50">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Upcoming</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Pending</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Past</span>
+</button>
+</div>
+</div>
+<div class="mt-6 space-y-6">
+<div>
+<h2 class="mb-3 px-1 text-xs font-bold uppercase tracking-wider text-content-light/60 dark:text-content-dark/60">Hosting</h2>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 shadow-[0_4px_12px_-4px_rgba(244,123,37,0.2)] ring-1 ring-primary/20 dark:bg-subtle-dark/50 dark:ring-primary/20">
+<div class="relative">
+<img alt="Spaghetti dish" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1SEg4EzFyBkRcXSSR7D3JvQ01E1EA6YImxUhgAh68KYRjA45G0iOH4dbl_qaMbXypbfP8rqN-bhRLnBeV3HexqFrNutLTdls8pNLHmOvyeTB_H_jFAKXZvUqOuW5IIrS2x2M1qUv8Xp7ovIHAelpRlKaU8D5vB5fJRil958W5E5itpQD_AIoFZAm95ZxJc0s18FibL2opyzigwSmMsILYpIbaM7xmEiBG0wGx03JoEtC9g6nW4E5qY-szdwhQcDJCI1mpCXWs3g"/>
+<div class="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-white shadow-sm ring-2 ring-white dark:ring-subtle-dark">
+<span class="material-symbols-outlined text-[14px] font-bold">star</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-base leading-tight">Spaghetti Night</h3>
+<span class="rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">You</span>
+</div>
+<div class="mt-1 flex items-center gap-1.5 text-content-light/80 dark:text-content-dark/80">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="text-xs font-semibold">Today, 7:00 PM</span>
+</div>
+<div class="mt-2 flex items-center">
+<div class="flex items-center gap-1.5 rounded-full bg-primary/10 px-2 py-1 dark:bg-primary/20">
+<span class="material-symbols-outlined text-sm text-primary">group</span>
+<span class="text-xs font-bold text-primary">2/4 joined</span>
+</div>
+</div>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="mb-3 px-1 text-xs font-bold uppercase tracking-wider text-content-light/60 dark:text-content-dark/60">Attending</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50">
+<img alt="Taco dish" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftfGPufse3m_HwFKpu5dtVlfQKS6NQna_V-TSRV-lh2IiSr7v2pAXK6q-JH2Pp41nXSDk0lJLS6bojrt2ysZxw2Ym61zrL1JIg98FAHiObx4WdE5Ds6M5is8AaxrM81WkTCi6pr4T-4fyvlo4XIX45sMD6LX_5mIWQQ3r4neWawhqJrmEQWUVofsH-He5LL66lPSrmg5ApWFVpdfbJU6diuHUSpdIVJ-NfyrEQJyRc8rWp3JAdHhkGTmSlil0iSmbFAV0CU9bvQ"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Taco Tuesday Fiesta</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Carlos</p>
+<div class="mt-1 flex items-center gap-1.5 text-content-light/70 dark:text-content-dark/70">
+<span class="material-symbols-outlined text-sm">event</span>
+<span class="text-xs font-semibold">Tue, Oct 24 • 6:30 PM</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">more_horiz</span>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50">
+<img alt="Sushi platter" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpJyrUXKkhVk3lotOK12XiBnbsry_x3M1gplqSiWo0u7rMzDzI7GRd04YjTK22-gpQFDa5QiBIKvcLdZe_akZt1XGB6RIsGSltKn9zG81738phmxEcYFIxuqId_aNixEQ2vtpv42JNXGze51hUqzQf4MfqqplfpPgYzXr6bQesKlhUCIeABryOhEon83oTmmr5-GjSksZy_QQX4qPiZVZFVn-abl2EtiU8R07Jp9yGYD50g6CylRFGx-2ujjQco1B9gZossCqnA"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Weekend Sushi Making</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Kenji</p>
+<div class="mt-1 flex items-center gap-1.5 text-content-light/70 dark:text-content-dark/70">
+<span class="material-symbols-outlined text-sm">event</span>
+<span class="text-xs font-semibold">Sat, Oct 28 • 1:00 PM</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 z-10 mt-8 border-t border-subtle-light bg-background-light dark:border-subtle-dark dark:bg-background-dark">
+<nav class="flex h-20 items-center justify-around px-2">
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+<span class="text-xs font-bold">My Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="text-xs">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-xs">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+</body></html>
+
+
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Events - Pending Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "content-light": "#1c130d",
+              "content-dark": "#f8f7f5",
+              "subtle-light": "#e8d9ce",
+              "subtle-dark": "#3c2e25",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+<div class="flex min-h-screen flex-col" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<header class="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-subtle-light dark:border-subtle-dark bg-background-light/80 dark:bg-background-dark/80 px-4 backdrop-blur-sm">
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold">My Events</h1>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+</button>
+</header>
+<main class="flex-1 px-4 pt-6">
+<div class="flex w-full items-center justify-center">
+<div class="flex items-center gap-2 rounded-full bg-subtle-light/50 p-1 dark:bg-subtle-dark/50">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Upcoming</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Pending</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Past</span>
+</button>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50">
+<img alt="Spaghetti dish" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1SEg4EzFyBkRcXSSR7D3JvQ01E1EA6YImxUhgAh68KYRjA45G0iOH4dbl_qaMbXypbfP8rqN-bhRLnBeV3HexqFrNutLTdls8pNLHmOvyeTB_H_jFAKXZvUqOuW5IIrS2x2M1qUv8Xp7ovIHAelpRlKaU8D5vB5fJRil958W5E5itpQD_AIoFZAm95ZxJc0s18FibL2opyzigwSmMsILYpIbaM7xmEiBG0wGx03JoEtC9g6nW4E5qY-szdwhQcDJCI1mpCXWs3g"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Spaghetti Night</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Isabella</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-yellow-500">hourglass_top</span>
+<span class="text-xs font-semibold text-yellow-500">Pending Approval</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">more_horiz</span>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50">
+<img alt="Taco dish" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftfGPufse3m_HwFKpu5dtVlfQKS6NQna_V-TSRV-lh2IiSr7v2pAXK6q-JH2Pp41nXSDk0lJLS6bojrt2ysZxw2Ym61zrL1JIg98FAHiObx4WdE5Ds6M5is8AaxrM81WkTCi6pr4T-4fyvlo4XIX45sMD6LX_5mIWQQ3r4neWawhqJrmEQWUVofsH-He5LL66lPSrmg5ApWFVpdfbJU6diuHUSpdIVJ-NfyrEQJyRc8rWp3JAdHhkGTmSlil0iSmbFAV0CU9bvQ"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Taco Tuesday Fiesta</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Carlos</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-green-500">check_circle</span>
+<span class="text-xs font-semibold text-green-500">Accepted</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">more_horiz</span>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50">
+<img alt="Sushi platter" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpJyrUXKkhVk3lotOK12XiBnbsry_x3M1gplqSiWo0u7rMzDzI7GRd04YjTK22-gpQFDa5QiBIKvcLdZe_akZt1XGB6RIsGSltKn9zG81738phmxEcYFIxuqId_aNixEQ2vtpv42JNXGze51hUqzQf4MfqqplfpPgYzXr6bQesKlhUCIeABryOhEon83oTmmr5-GjSksZy_QQX4qPiZVZFVn-abl2EtiU8R07Jp9yGYD50g6CylRFGx-2ujjQco1B9gZossCqnA"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Weekend Sushi Making</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Kenji</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-red-500">cancel</span>
+<span class="text-xs font-semibold text-red-500">Declined</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">more_horiz</span>
+</button>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 z-10 mt-8 border-t border-subtle-light bg-background-light dark:border-subtle-dark dark:bg-background-dark">
+<nav class="flex h-20 items-center justify-around px-2">
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+<span class="text-xs font-bold">My Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="text-xs">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-xs">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>
+
+
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Events - Past</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221710",
+              "content-light": "#1c130d",
+              "content-dark": "#f8f7f5",
+              "subtle-light": "#e8d9ce",
+              "subtle-dark": "#3c2e25",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+<div class="flex min-h-screen flex-col" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<header class="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-subtle-light dark:border-subtle-dark bg-background-light/80 dark:bg-background-dark/80 px-4 backdrop-blur-sm">
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold">My Events</h1>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+</button>
+</header>
+<main class="flex-1 px-4 pt-6">
+<div class="flex w-full items-center justify-center">
+<div class="flex items-center gap-2 rounded-full bg-subtle-light/50 p-1 dark:bg-subtle-dark/50">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Upcoming</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-content-light dark:text-content-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Pending</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Past</span>
+</button>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50 opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Mediterranean Feast" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1SEg4EzFyBkRcXSSR7D3JvQ01E1EA6YImxUhgAh68KYRjA45G0iOH4dbl_qaMbXypbfP8rqN-bhRLnBeV3HexqFrNutLTdls8pNLHmOvyeTB_H_jFAKXZvUqOuW5IIrS2x2M1qUv8Xp7ovIHAelpRlKaU8D5vB5fJRil958W5E5itpQD_AIoFZAm95ZxJc0s18FibL2opyzigwSmMsILYpIbaM7xmEiBG0wGx03JoEtC9g6nW4E5qY-szdwhQcDJCI1mpCXWs3g"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Mediterranean Feast</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Sophia</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-content-light/50 dark:text-content-dark/50">calendar_month</span>
+<span class="text-xs font-semibold text-content-light/50 dark:text-content-dark/50">Oct 28, 2023</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">restart_alt</span>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50 opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Dim Sum Sunday" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftfGPufse3m_HwFKpu5dtVlfQKS6NQna_V-TSRV-lh2IiSr7v2pAXK6q-JH2Pp41nXSDk0lJLS6bojrt2ysZxw2Ym61zrL1JIg98FAHiObx4WdE5Ds6M5is8AaxrM81WkTCi6pr4T-4fyvlo4XIX45sMD6LX_5mIWQQ3r4neWawhqJrmEQWUVofsH-He5LL66lPSrmg5ApWFVpdfbJU6diuHUSpdIVJ-NfyrEQJyRc8rWp3JAdHhkGTmSlil0iSmbFAV0CU9bvQ"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Dim Sum Sunday</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by Wei</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-content-light/50 dark:text-content-dark/50">calendar_month</span>
+<span class="text-xs font-semibold text-content-light/50 dark:text-content-dark/50">Oct 15, 2023</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">restart_alt</span>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-white p-3 dark:bg-subtle-dark/50 opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Backyard BBQ" class="h-16 w-16 flex-shrink-0 rounded-lg object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpJyrUXKkhVk3lotOK12XiBnbsry_x3M1gplqSiWo0u7rMzDzI7GRd04YjTK22-gpQFDa5QiBIKvcLdZe_akZt1XGB6RIsGSltKn9zG81738phmxEcYFIxuqId_aNixEQ2vtpv42JNXGze51hUqzQf4MfqqplfpPgYzXr6bQesKlhUCIeABryOhEon83oTmmr5-GjSksZy_QQX4qPiZVZFVn-abl2EtiU8R07Jp9yGYD50g6CylRFGx-2ujjQco1B9gZossCqnA"/>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Backyard BBQ</h3>
+<p class="text-sm text-content-light/70 dark:text-content-dark/70">Hosted by James</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-content-light/50 dark:text-content-dark/50">calendar_month</span>
+<span class="text-xs font-semibold text-content-light/50 dark:text-content-dark/50">Sep 30, 2023</span>
+</div>
+</div>
+<button class="flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-xl text-content-light/70 dark:text-content-dark/70">restart_alt</span>
+</button>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 z-10 mt-8 border-t border-subtle-light bg-background-light dark:border-subtle-dark dark:bg-background-dark">
+<nav class="flex h-20 items-center justify-around px-2">
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+<span class="text-xs font-bold">My Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="text-xs">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-content-light/60 dark:text-content-dark/60" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-xs">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+</body></html>
+
+
+<!-- when the hoster click on their oppen meal or on the meal they created -->
+ 
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Host Meal Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f47b25",
+            "background-light": "#f8f7f5",
+            "background-dark": "#221710",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col font-display group/design-root overflow-x-hidden text-stone-800 dark:text-stone-200">
+<!-- Top App Bar -->
+<header class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Meal Requests</h1>
+<div class="flex size-12 shrink-0 items-center"></div>
+</header>
+<main class="flex flex-col flex-1 px-4">
+<!-- Event Header Card -->
+<div class="flex flex-col items-stretch justify-start rounded-lg bg-white dark:bg-stone-900/50 shadow-sm mt-4">
+<div class="w-full bg-center bg-no-repeat aspect-[2/1] bg-cover rounded-t-lg" data-alt="A delicious looking bowl of Ethiopian Doro Wat stew" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5Rm6cOAkxo-JTNVwiwTH0JuM0nvJdwSBYS_sRetWdhJ87rDsTcBFTIjJgrLQ1WGo4Wk8hljQbrOhbgXLZdtl-YEzPE8-ooOZo_GCqRPQBYhdGhcYlYpNiGE7LN8NXScqqKwtmK1NWixMQykXWK3k2K-oTLR-vupZ-2jGyn6tizw1T5GGcEBS77OBQoe2hb-Rg-LJaxz29-3T6v_5b3LMrspzsYkqDTl5_WhXt4wiyryluv2f9OWd3JnIpOrWkTxz-PNa9oCjpEg");'></div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 p-4">
+<p class="text-sm font-medium leading-normal text-primary">ETHIOPIAN CUISINE</p>
+<p class="text-xl font-bold leading-tight tracking-[-0.015em]">Doro Wat Dinner</p>
+<div class="flex items-end gap-3 justify-between mt-1">
+<p class="text-base font-normal leading-normal text-stone-600 dark:text-stone-400">Saturday, Nov 18 at 7:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Request Counter -->
+<h3 class="tracking-light text-2xl font-bold leading-tight text-left pb-2 pt-8">3 Pending Requests</h3>
+<!-- Request List -->
+<div class="flex flex-col gap-2">
+<!-- Request Item 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-stone-900/50 p-3 rounded-lg min-h-14 justify-between shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Profile picture of Jane D." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgqmNeXFlsfFfxGOtB2sGdezyTiqy_KzPbyZiYkMxBNVDUwOl5vVmZelz9VEZI0r22tdfYl3YK0SZ03pytvcDoad9Aa4CdX4eDxgojsASzvRKPoCVX6Kdqh-7nXF-dxA_WDfilnVlBYYA-vET2YRbwvHNpGfCWU3qZPdCzAHQ1bUFFqfM7f8RVsoIxHhYjxL8tFPInZrPg3WB3rWZrzbk8hqQiu6c_79lWJZ0QeIYjMtFcdHHmoLR35K8NnJXM_4wn9g-YWYWo0A");'></div>
+<p class="text-base font-medium leading-normal flex-1 truncate">Jane D.</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-stone-200/60 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Decline</button>
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-primary text-white">Accept</button>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-stone-900/50 p-3 rounded-lg min-h-14 justify-between shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Profile picture of Mike R." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4mRKuEQfqTQRMVKrq3vvuVpKaVExc-K_AUQhvYD5mQs6-rZLTu3wUAmenFuARYv94phMpJ8iscq3BAseFzb6rk-6rHs6qmU8CYmXLBPxHhNV7ei8JnKUtMBQH69LxeTGjgErkGbVTc1EJUt6zjKhGAr2T0vNYWtDY5ezNSMopcSMLS1exPxBO8sUOgHyU52k4x4ryoLb3iAGPRqkmwYFYfNXJLrgy_PrODRgNY0XB-okxLvDUXjfnz8uPgxlYsRbnXes33EU5sw");'></div>
+<p class="text-base font-medium leading-normal flex-1 truncate">Mike R.</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-stone-200/60 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Decline</button>
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-primary text-white">Accept</button>
+</div>
+</div>
+<!-- Request Item 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-stone-900/50 p-3 rounded-lg min-h-14 justify-between shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Profile picture of Chloe S." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNsC66Usr2BWIqOQg3yER4OnYMWDB5NvHCPqge77YAFzILKbJdDuEzykojgY1n0Q8BeU3XIjLecCV9aPZV6SM2dEmNzMTxuHN3-Cr9CLSOvHdLhrp4CUfxmWJp8An2BndzG_veZqR_KOeBXONE1C1RlvrjWPIlPhrl8dMUZNkihjRYL0VsfrNeLN5jkzNT8SgNxD-tDhutwj_jkkroUT2l4Wc29-bvia0Mbidw60Ua_5dY15FQAK21yO6rMCMy5w6lYe8quJObig");'></div>
+<p class="text-base font-medium leading-normal flex-1 truncate">Chloe S.</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-stone-200/60 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Decline</button>
+<button class="text-sm font-semibold leading-normal py-2 px-4 rounded-full bg-primary text-white">Accept</button>
+</div>
+</div>
+</div>
+<!-- Empty State (Example - uncomment to view) -->
+<!--
+      <div class="flex-1 flex flex-col items-center justify-center text-center p-8 mt-8">
+        <div class="flex items-center justify-center size-20 rounded-full bg-primary/10 mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary">notifications_off</span>
+        </div>
+        <h4 class="text-lg font-bold">No New Requests</h4>
+        <p class="text-stone-600 dark:text-stone-400 mt-1 max-w-xs">You're all caught up! No new requests at the moment.</p>
+      </div>
+      -->
+</main>
+</div>
+</body></html>
+
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - Comments &amp; Stars Section</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#F97316",
+            "background-light": "#f8fafc",
+            "background-dark": "#0B1120",
+            "surface-light": "#ffffff",
+            "surface-dark": "#181E2D"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative min-h-screen w-full">
+<header class="sticky top-0 z-10 bg-background-light/90 backdrop-blur-sm pt-4">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-slate-800">
+</div>
+<h1 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Profile</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-slate-800 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined !text-2xl">settings</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4 pb-28">
+<div class="flex flex-col items-center gap-4">
+<div class="relative">
+<img alt="Profile picture of Kenji" class="inline-block size-24 rounded-full object-cover ring-4 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"/>
+<button class="absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white shadow">
+<span class="material-symbols-outlined !text-base">edit</span>
+</button>
+</div>
+<div class="text-center">
+<h2 class="text-2xl font-bold text-slate-900">Kenji</h2>
+<p class="text-slate-500 mt-1">Lover of food, culture, and good company. Let's share a meal!</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 rounded-xl bg-surface-light p-4 shadow-sm text-center">
+<div>
+<p class="text-2xl font-bold text-primary">12</p>
+<p class="text-sm text-slate-500">Hosted</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">28</p>
+<p class="text-sm text-slate-500">Joined</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">4.8</p>
+<p class="text-sm text-slate-500">Rating</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-800">Previous Comments &amp; Stars</h3>
+<a class="text-sm font-semibold text-primary" href="#">See all</a>
+</div>
+<div class="flex flex-col gap-4">
+<div class="rounded-xl bg-surface-light p-4 shadow-sm">
+<div class="flex items-start gap-3">
+<img alt="Avatar of commenter Sarah" class="size-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB12PM4yhw9ElDKv1n7h4HbwCooKmqPzL35V2qnGd4RFmopfYHgB5j6Rh0WOuzStXqihXkgTJqJMSvSHLP3Xq2zqnBHjuLAY4ZCyYinnqMcLYPLnAZkqySmh6Zi6e0YnvuvzjiHPLlpT5KGgNsbI6aYTrXcXNf9JBvBPI8URNSsLMQ2Oz81OKpOtlV8uHVqRNSEs9B62tI0Fe1Un0hwF55J12ZkAHfcaD9xra0Oh837vZyGHKtkM-xBo1xYpGiNNGEEdC7Qek8NnQ"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-slate-900">Sarah</p>
+<p class="text-xs text-slate-400">2 days ago</p>
+</div>
+<div class="flex items-center gap-0.5 text-amber-500">
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+<p class="mt-2 text-sm text-slate-600">"Amazing host! The Doro Wat was authentic and delicious. Kenji created such a welcoming atmosphere."</p>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-light p-4 shadow-sm">
+<div class="flex items-start gap-3">
+<img alt="Avatar of commenter Michael" class="size-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlw8YagQwpDjqK-D01uI-_Z6oCLsvo_2J3p5jCQS3h10tYgFo0NqvT_USgTRbbiiCLmOoP87bN-hwlYOJXk6shG6efLLz7VLRRuov2iRBqJ7AfrAtnL7Fl06xomFfUO3aAo5DYqJyCEB70I2ru8VBqkO2M6hHM5xGPBWxe0u3cucxJLXTIszBgdlU8xhd7mZqh4JXOCGBz5qyEVKDcvaSQD6CVu_ifoAEjDGR6XTOJd0v7TSaIp9xAfdKiEiLlt48b0PmMKKSTg"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-slate-900">Michael</p>
+<p class="text-xs text-slate-400">1 week ago</p>
+</div>
+<div class="flex items-center gap-0.5 text-amber-500">
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined !text-base">star</span>
+</div>
+</div>
+<p class="mt-2 text-sm text-slate-600">"Great conversation and a fantastic meal. The Kitfo Night was a memorable experience. Highly recommended."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-10 grid h-20 grid-cols-5 items-center border-t border-slate-200 bg-surface-light/90 backdrop-blur-sm">
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-xs">My Events</span>
+</button>
+<div class="flex justify-center">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined !text-4xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-xs">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-xs font-bold">Profile</span>
+</button>
+</nav>
+</div>
+
+</body></html>
+<!-- 
+this this the UI for the profile from the above we take the design and the comment and form the below that I am sending we will take the aboutme and the proffsion, and interset -->
+
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Participant Profile View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,FILL@0&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f47b25",
+              "background-light": "#fcfaf8",
+              "background-dark": "#1c130d",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-[#1c130d] dark:text-[#fcfaf8] flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#1c130d] dark:text-[#fcfaf8] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Isabella Chen</h2>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<div class="flex flex-col flex-1">
+<!-- ProfileHeader -->
+<div class="p-4 @container">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32" data-alt="Profile picture of Isabella Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA87d_hBk8E-g_SBJ0pNdCK5Z8CmNpf-_qQiOV-q-hJGOKkyp6aUEc70XydeCCvDPp0JnsmkzYmQ_BcX9u5e3j3x0vr0VX-aU-Xmn9LSFogOUnoJsy4N4kCSCCjBf5zovbhO7lzUoy807VI0CI63Ba87bmPBYFLFbERfkUMRD1bC3K_Ip-YVg5sBV700UViGtv5BHazLdP8ztc5CiiCF5aVAP3fFWvKsUGKVrJjl6qpNK-Hu7uBcsr_A0S7dXLyu7xFV6F-pt5d6A");'></div>
+<div class="absolute bottom-1 right-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined !text-[20px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-[#1c130d] dark:text-[#fcfaf8] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Isabella Chen, 28</p>
+<p class="text-[#9c6c49] dark:text-[#e8d9ce] text-base font-normal leading-normal text-center">Product Designer</p>
+</div>
+</div>
+<div class="flex w-full max-w-[480px] gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20 text-[#1c130d] dark:text-[#fcfaf8] text-sm font-bold leading-normal tracking-[0.015em] flex-1">
+<span class="truncate">Decline</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] flex-1">
+<span class="truncate">Accept</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ProfileStats -->
+<div class="flex flex-wrap gap-3 px-4 py-3">
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#e8d9ce] dark:border-[#e8d9ce]/20 p-3 items-center text-center">
+<p class="text-[#1c130d] dark:text-[#fcfaf8] tracking-light text-2xl font-bold leading-tight">12</p>
+<p class="text-[#9c6c49] dark:text-[#e8d9ce] text-sm font-normal leading-normal">Meals Shared</p>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#e8d9ce] dark:border-[#e8d9ce]/20 p-3 items-center text-center">
+<p class="text-[#1c130d] dark:text-[#fcfaf8] tracking-light text-2xl font-bold leading-tight">4.8/5</p>
+<p class="text-[#9c6c49] dark:text-[#e8d9ce] text-sm font-normal leading-normal">Host Rating</p>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#e8d9ce] dark:border-[#e8d9ce]/20 p-3 items-center text-center">
+<p class="text-[#1c130d] dark:text-[#fcfaf8] tracking-light text-2xl font-bold leading-tight">2023</p>
+<p class="text-[#9c6c49] dark:text-[#e8d9ce] text-sm font-normal leading-normal">Member Since</p>
+</div>
+</div>
+<!-- Bio Card -->
+<div class="p-4 pt-1 @container">
+<div class="flex flex-col items-stretch justify-start rounded-lg border border-[#e8d9ce] dark:border-[#e8d9ce]/20 bg-background-light dark:bg-background-dark">
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 p-4">
+<p class="text-[#1c130d] dark:text-[#fcfaf8] text-lg font-bold leading-tight tracking-[-0.015em]">About Me</p>
+<p class="text-[#9c6c49] dark:text-[#e8d9ce] text-base font-normal leading-normal pt-1">Hi! I'm a product designer who loves exploring new cuisines and meeting new people. My go-to comfort food is ramen. Looking forward to sharing a great meal and conversation!</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<h3 class="text-[#1c130d] dark:text-[#fcfaf8] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Interests</h3>
+<!-- Tags/Pills Component -->
+<div class="flex flex-wrap gap-2 px-4 pb-4">
+<div class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20">
+<span class="truncate text-[#1c130d] dark:text-[#fcfaf8] text-sm font-medium leading-normal">Vegan</span>
+</div>
+<div class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20">
+<span class="truncate text-[#1c130d] dark:text-[#fcfaf8] text-sm font-medium leading-normal">Tech</span>
+</div>
+<div class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20">
+<span class="truncate text-[#1c130d] dark:text-[#fcfaf8] text-sm font-medium leading-normal">Travel</span>
+</div>
+<div class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20">
+<span class="truncate text-[#1c130d] dark:text-[#fcfaf8] text-sm font-medium leading-normal">Photography</span>
+</div>
+<div class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-[#e8d9ce]/80 dark:bg-[#e8d9ce]/20">
+<span class="truncate text-[#1c130d] dark:text-[#fcfaf8] text-sm font-medium leading-normal">Hiking</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messages / Lobby (Previous Chats View)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#F97316",
+            "background-light": "#f8fafc",
+            "background-dark": "#0B1120",
+            "surface-light": "#ffffff",
+            "surface-dark": "#181E2D"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative flex h-full min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 bg-surface-light/90 pt-4 backdrop-blur-sm">
+<div class="flex items-center justify-between p-4 pb-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-start">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-700">
+<span class="material-symbols-outlined !text-2xl">arrow_back_ios_new</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col items-center text-center">
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900">Messages</h1>
+<p class="text-sm text-slate-500">Meal Events</p>
+</div>
+<div class="flex h-12 w-12 shrink-0 items-center justify-end">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-700">
+<span class="material-symbols-outlined !text-2xl">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 flex-col">
+<div class="p-4">
+<h2 class="text-base font-bold text-slate-800">Current Event</h2>
+</div>
+<a class="flex items-center gap-4 bg-primary/10 px-4 py-3 transition-colors hover:bg-primary/20" href="#">
+<div class="relative shrink-0">
+<div class="flex -space-x-2">
+<img alt="Profile picture of Maria" class="inline-block h-12 w-12 rounded-full object-cover ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+<img alt="Profile picture of Kenji" class="inline-block h-12 w-12 rounded-full object-cover ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"/>
+</div>
+<span class="absolute bottom-0 right-0 block h-3.5 w-3.5 rounded-full border-2 border-white bg-green-400"></span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex items-baseline justify-between">
+<p class="truncate font-bold text-slate-900">Firfir Dinner</p>
+<p class="text-xs text-primary">4:34 PM</p>
+</div>
+<p class="truncate text-sm text-slate-500">Maria: Perfect! See you both soon!</p>
+</div>
+</a>
+<div class="p-4 pb-2">
+<h2 class="text-base font-bold text-slate-800">Past Events</h2>
+</div>
+<div class="flex flex-col">
+<a class="flex items-center gap-4 px-4 py-3 transition-colors hover:bg-slate-100" href="#">
+<div class="shrink-0">
+<img alt="Group picture for Taco Tuesday" class="inline-block h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+</div>
+<div class="flex-1 overflow-hidden border-b border-slate-100 pb-3">
+<div class="flex items-baseline justify-between">
+<p class="truncate font-semibold text-slate-800">Taco Tuesday</p>
+<p class="text-xs text-slate-400">Yesterday</p>
+</div>
+<p class="truncate text-sm text-slate-500">You: That was amazing! Thanks for organizing.</p>
+</div>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 transition-colors hover:bg-slate-100" href="#">
+<div class="shrink-0">
+<img alt="Group picture for Brunch Party" class="inline-block h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+</div>
+<div class="flex-1 overflow-hidden border-b border-slate-100 pb-3">
+<div class="flex items-baseline justify-between">
+<p class="truncate font-semibold text-slate-800">Brunch Party</p>
+<p class="text-xs text-slate-400">May 12</p>
+</div>
+<p class="truncate text-sm text-slate-500">Kenji: I'm running about 10 mins late.</p>
+</div>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 transition-colors hover:bg-slate-100" href="#">
+<div class="shrink-0">
+<img alt="Group picture for Sushi Night" class="inline-block h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"/>
+</div>
+<div class="flex-1 overflow-hidden pb-3">
+<div class="flex items-baseline justify-between">
+<p class="truncate font-semibold text-slate-800">Sushi Night</p>
+<p class="text-xs text-slate-400">May 5</p>
+</div>
+<p class="truncate text-sm text-slate-500">Maria: Can't wait! I love sushi.</p>
+</div>
+</a>
+</div>
+</main>
+<footer class="sticky bottom-0 mt-auto w-full border-t border-slate-200 bg-background-light">
+<nav class="flex items-center justify-around px-2 py-1">
+<a class="flex flex-col items-center gap-1 rounded-lg px-3 py-2 text-slate-500 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined !text-2xl">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 rounded-lg px-3 py-2 text-slate-500 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined !text-2xl">search</span>
+<span class="text-xs font-medium">Explore</span>
+</a>
+<a class="flex h-16 w-16 -translate-y-4 flex-col items-center justify-center rounded-full bg-primary text-white shadow-lg" href="#">
+<span class="material-symbols-outlined !text-3xl">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 rounded-lg px-3 py-2 text-primary transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined !text-2xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-xs font-bold">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 rounded-lg px-3 py-2 text-slate-500 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined !text-2xl">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messages / Lobby</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#F97316",
+            "background-light": "#f8fafc",
+            "background-dark": "#0B1120",
+            "surface-light": "#ffffff",
+            "surface-dark": "#181E2D"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative flex h-full min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 bg-surface-light/90 pt-4 backdrop-blur-sm">
+<div class="flex items-center justify-between p-4 pb-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-start">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-700">
+<span class="material-symbols-outlined !text-2xl">arrow_back_ios_new</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col items-center text-center">
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900">Firfir Dinner</h1>
+<p class="text-sm text-slate-500">Maria, Kenji, and you</p>
+</div>
+<div class="flex h-12 w-12 shrink-0 items-center justify-end">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-700">
+<span class="material-symbols-outlined !text-2xl">more_horiz</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 flex-col gap-4 overflow-y-auto p-4 pb-24">
+<div class="flex flex-col gap-4">
+<p class="text-center text-xs text-slate-400">Today</p>
+<div class="flex items-end gap-2">
+<img alt="Profile picture of Maria" class="inline-block size-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+<div class="flex flex-col items-start gap-1">
+<div class="max-w-xs rounded-xl rounded-bl-lg bg-slate-100 p-3">
+<p class="text-sm text-slate-800">Hey everyone! So excited for tonight. Just wanted to confirm, we're still on for 7 PM at my place, right?</p>
+</div>
+<span class="text-xs text-slate-400">4:30 PM</span>
+</div>
+</div>
+<div class="flex items-end gap-2 self-end">
+<div class="flex flex-col items-end gap-1">
+<div class="max-w-xs rounded-xl rounded-br-lg bg-primary p-3 text-white">
+<p class="text-sm">Yep, 7 PM works for me! I can bring some drinks. Any preferences?</p>
+</div>
+<span class="text-xs text-slate-400">4:32 PM</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<img alt="Profile picture of Kenji" class="inline-block size-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"/>
+<div class="flex flex-col items-start gap-1">
+<div class="max-w-xs rounded-xl rounded-bl-lg bg-slate-100 p-3">
+<p class="text-sm text-slate-800">Sounds great! I’m good with anything. Maybe some white wine?</p>
+</div>
+<span class="text-xs text-slate-400">4:33 PM</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<img alt="Profile picture of Maria" class="inline-block size-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"/>
+<div class="flex flex-col items-start gap-1">
+<div class="max-w-xs rounded-xl rounded-bl-lg bg-slate-100 p-3">
+<p class="text-sm text-slate-800">Perfect! See you both soon!</p>
+</div>
+<span class="text-xs text-slate-400">4:34 PM</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 z-10 bg-surface-light p-4 pt-3">
+<div class="flex items-center gap-2">
+<label class="flex h-12 flex-1 flex-col min-w-40">
+<div class="flex h-full w-full flex-1 items-stretch rounded-full">
+<input class="form-input flex h-full min-w-0 flex-1 resize-none overflow-hidden rounded-full border-none bg-slate-100 px-4 text-base font-normal leading-normal text-slate-900 placeholder:text-slate-400 focus:outline-0 focus:ring-2 focus:ring-primary/50" placeholder="Type a message..." value=""/>
+</div>
+</label>
+<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined !text-2xl">send</span>
+</button>
+</div>
+</footer>
+</div>
+
+</body></html>

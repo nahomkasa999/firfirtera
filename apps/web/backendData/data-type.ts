@@ -153,3 +153,96 @@ export type pastEventsData = {
     events: pastEventCard[]; // List of past meals (history)
 }
 
+// ============================================
+// HOST MEAL REQUESTS PAGE DATA TYPES
+// ============================================
+// This page is shown when a host clicks on a meal they created
+// Shows meal details and list of users who requested to join
+// Host can accept or decline each request
+
+interface MealRequestUser {
+    userId: string; // User ID for navigation to profile
+    name: string; // User's name (e.g., "Jane D.")
+    profilePicture: string; // User's profile picture URL
+    requestId: string; // Unique identifier for this request
+}
+
+export type hostMealRequestsData = Omit<baseMealData, "userRelationship" | "joinedusers"> & {
+    // Meal header information
+    formattedTime: string; // Formatted time string (e.g., "Saturday, Nov 18 at 7:00 PM")
+    // Pending requests
+    pendingRequests: MealRequestUser[]; // List of users who requested to join (pending approval)
+    pendingRequestsCount: number; // Total number of pending requests
+}
+
+// ============================================
+// PROFILE PAGE DATA TYPES
+// ============================================
+// Profile page shows user's own profile with stats, comments, and bio
+
+interface ProfileComment {
+    commenterName: string; // Name of person who left the comment
+    commenterAvatarUrl: string; // Profile picture of commenter
+    commentTimeAgo: string; // Time ago string (e.g., "2 days ago", "1 week ago")
+    rating: number; // Rating from 1 to 5 (stars)
+    comment: string; // Comment text
+}
+
+interface ProfileStats {
+    hosted: number; // Number of meals hosted
+    joined: number; // Number of meals joined
+    rating: number; // Overall rating (e.g., 4.8)
+}
+
+export type profileData = {
+    name: string; // User's name
+    profilePicture: string; // User's profile picture URL
+    aboutme: string; // Bio/about me text
+    interests: string[]; // Array of interest tags (e.g., ["Vegan", "Tech", "Travel"])
+    occupation: string; // User's occupation (e.g., "Product Designer")
+    stats: ProfileStats; // Profile statistics
+    comments: ProfileComment[]; // Previous comments and ratings from other users
+}
+
+// ============================================
+// PARTICIPANT PROFILE VIEW DATA TYPES
+// ============================================
+// This is shown when viewing someone else's profile (e.g., from a join request)
+// Includes Accept/Decline buttons and verified badge
+
+export type participantProfileData = {
+    userId: string; // User ID for navigation
+    name: string; // User's name(username) 
+    age?: number; // User's age -> the user can hide or unhide their age,
+    profilePicture: string; // User's profile picture URL
+    isVerified: boolean; // Verified badge (earned after 3 meals where 3 people confirmed gender)
+    occupation: string; // User's occupation
+    aboutme: string; // Bio/about me text
+    interests: string[]; // Array of interest tags
+    stats: ProfileStats; // Profile statistics
+    // Only shown when viewing from a join request context
+    showAcceptDecline?: boolean; // Whether to show Accept/Decline buttons
+    requestId?: string; // Request ID if viewing from a join request
+}
+
+// ============================================
+// APPLIED MEAL DETAIL PAGE DATA TYPES
+// ============================================
+// This page is shown when a user clicks on a meal they applied to join
+// Different views based on request status: Pending, Accepted, or Rejected
+
+// Base type for applied meal detail (extends meal detail with request info)
+export type appliedMealDetailData = mealDetailData & {
+    requestId: string; // Unique identifier for the join request
+    requestStatus: "Pending" | "Accepted" | "Rejected"; // Status of the join request which is shown in the place of the button which used to be the "join button" 
+    requestSubmittedAt: Date; // When the user submitted the join request
+}
+
+export type tellusaboutyourselfData = {
+    name: string; // User's name
+    gender: "Male" | "Female"; // User's gender
+    profilePicture?: string; // User's profile picture URL
+    aboutme?: string; // Bio/about me text
+    interests?: string[]; // Array of interest tags (e.g., ["Vegan", "Tech", "Travel"])
+    occupation: string; // User's occupation (e.g., "Product Designer")
+}
