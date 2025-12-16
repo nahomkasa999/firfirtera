@@ -11,7 +11,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MealUp - Social Dining App",
+  title: "FirFirtera - Social Dining App",
 };
 
 export default function RootLayout({
