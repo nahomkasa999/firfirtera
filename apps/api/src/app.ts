@@ -2,9 +2,7 @@ import { cors } from "hono/cors";
 import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono } from "@hono/zod-openapi";
 
-const app = new OpenAPIHono<{
-
-  }>();
+const app = new OpenAPIHono<{}>();
 
   
   app.use(
