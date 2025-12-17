@@ -17,7 +17,7 @@ const BottomNav = () => {
   const isActive = (href: string) => pathname === href
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-10 bg-white border-t border-gray-200">
+    <div className="fixed bottom-0 left-0 right-0 z-10 bg-white border-t border-gray-200 mx-auto w-full md:max-w-[50%]">
         <div className="flex justify-around p-2">
             {navItems.map((item) => {
                 const active = isActive(item.href);

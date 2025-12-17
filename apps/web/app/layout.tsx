@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakartaSans.variable} font-display antialiased`}>
-        {children}
-         <Toaster />
+        <div >
+          {children}
+        </div>
+        <Toaster />
         <BottomNav />
       </body>
     </html>

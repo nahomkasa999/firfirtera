@@ -9,21 +9,24 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils"; // Assuming you have a utility for merging classes
 
 export default function HomeTopNavBar() {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+ 
 
   return (
-    <header className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm pt-4">
-      {/* 1. Header Row (Discover, Map) - No changes needed here */}
-      <div className="flex items-center p-4 pb-2 justify-between">
+    <header className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm pt-0 border-b border-border/40">
+      {/* 1. Header Row */}
+      <div className="flex items-center p-4 justify-between">
         <div className="flex size-12 shrink-0 items-center justify-start text-foreground">
           <Utensils className="text-3xl text-primary" />
         </div>
-        <h1 className="text-foreground text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
-          Discover
+        <h1 className="text-foreground text-2xl font-bold leading-none tracking-[-0.015em] flex-1 text-start">
+          Hello, <span className="text-primary">Nahom</span>
+          <span className="block mt-1 text-sm text-muted-foreground tracking-wide font-light">
+            Ready to eat?
+          </span>
         </h1>
         <div className="flex w-12 items-center justify-end">
           <Button
@@ -35,85 +38,63 @@ export default function HomeTopNavBar() {
           </Button>
         </div>
       </div>
-      
-      {/* 2. Search Bar & Filters */}
-      <div className="px-4 py-3">
+
+      {/* 2. Search Bar Area */}
+      <div className="px-4 mb-2">
         <Collapsible open={isFiltersOpen} onOpenChange={setIsFiltersOpen}>
-          
-          {/* Main Search Bar Wrapper */}
-          <div className="flex w-full items-center rounded-lg h-12 bg-muted">
-            
-            {/* Filter Button (FIXED ALIGNMENT) */}
+          {/* Main Search Bar Wrapper - Removed bg-muted, added thin border */}
+          <div className="flex w-full items-center rounded-xl h-12 border border-border bg-transparent focus-within:border-primary/50 transition-colors">
+            {/* Filter Toggle */}
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                // Use a fixed size and ensure content is centered
-                className="h-full w-12 shrink-0 rounded-l-lg rounded-r-none flex items-center justify-center hover:bg-muted/70"
+                className="h-full w-12 shrink-0 rounded-l-xl rounded-r-none flex items-center justify-center hover:bg-muted/50"
                 aria-label="Filter"
               >
-                {/* Use a larger text-xl for better visibility and centering */}
-                <Filter className="text-xl" /> 
+                <Filter className="h-5 w-5 text-muted-foreground" />
               </Button>
             </CollapsibleTrigger>
-            
-            {/* Separator Line (Optional, but adds polish) */}
-            <div className="h-6 w-[1px] bg-border mx-0.5 shrink-0" />
 
-            {/* Search Icon and Input */}
+            <div className="h-6 w-[1px] bg-border shrink-0" />
+
+            {/* Search Input - Removed background and focus rings */}
             <div className="flex flex-1 items-center h-full">
-              {/* Search Icon (FIXED ALIGNMENT and spacing) */}
               <Search className="h-5 w-5 ml-3 mr-2 text-muted-foreground" />
               <Input
-                // Input takes remaining space, remove conflicting classes
-                className="flex-1 border-0 bg-muted h-full placeholder:text-muted-foreground p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="flex-1 border-0 bg-transparent h-full placeholder:text-muted-foreground p-4 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none"
                 placeholder="Search events or cuisines"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            
           </div>
-          
-          {/* Collapsible Filters Content (No changes needed) */}
-          <CollapsibleContent className="px-4 pb-4 pt-3">
-            <div className="flex gap-3 overflow-x-auto">
+
+          {/* Expanded Filters Content */}
+          <CollapsibleContent className="pb-4 pt-3">
+            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
               <Button
-                variant="default"
+                variant="outline"
                 size="sm"
-                className="h-8 shrink-0 rounded-full gap-x-1.5 pl-3 pr-2"
+                className="h-8 shrink-0 rounded-full gap-x-1.5"
               >
-                <span className="text-sm font-medium leading-normal">
-                  Treat/Split
-                </span>
-                <ChevronDown className="text-lg" />
+                <span>Treat/Split</span>
+                <ChevronDown className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="h-8 shrink-0 rounded-full gap-x-1.5 pl-3 pr-2"
+                className="h-8 shrink-0 rounded-full gap-x-1.5"
               >
-                <span className="text-sm font-medium leading-normal">
-                  Distance
-                </span>
-                <ChevronDown className="text-lg" />
+                <span>Distance</span>
+                <ChevronDown className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="h-8 shrink-0 rounded-full gap-x-1.5 pl-3 pr-2"
+                className="h-8 shrink-0 rounded-full gap-x-1.5"
               >
-                <span className="text-sm font-medium leading-normal">Time</span>
-                <ChevronDown className="text-lg" />
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-8 shrink-0 rounded-full gap-x-1.5 pl-3 pr-2"
-              >
-                <span className="text-sm font-medium leading-normal">
-                  Cuisine
-                </span>
-                <ChevronDown className="text-lg" />
+                <span>Cuisine</span>
+                <ChevronDown className="h-4 w-4" />
               </Button>
             </div>
           </CollapsibleContent>
