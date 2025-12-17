@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-display antialiased`}>
+      <body className={`${plusJakartaSans.variable} font-display antialiased lg:w-[50%] mx-auto`}>
         <div >
           {children}
         </div>
