@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { formatTime, formatPrice, getCuisine } from "../_helpers/HomeHelper";
+import { formatTime, formatPrice, getCuisine } from "@/app/(home)/_helpers/HomeHelper";
 import { Hourglass, CheckCircle2, XCircle, LucideIcon } from "lucide-react";
 
 type StatusDisplay = {
@@ -17,11 +17,13 @@ type StatusDisplay = {
 export default function MealCard({ 
   meal, 
   layout = "vertical",
-  status 
+  status,
+  variant = "default"
 }: { 
   meal: any; 
   layout?: "horizontal" | "vertical";
   status?: StatusDisplay;
+  variant?: "default" | "dull";
 }) {
   const cuisine = getCuisine(meal.mealname);
   const time = meal.formattedTime || formatTime(meal.mealtime);
@@ -34,7 +36,8 @@ export default function MealCard({
     <Link href={`/meal/${meal.mealId}`} className="block">
       <Card className={cn(
         "flex flex-col items-stretch justify-start rounded-[var(--radius)] shadow-sm bg-card p-4 shrink-0 cursor-pointer transition-opacity hover:opacity-90",
-        layout === "horizontal" ? "w-[300px]" : "w-full"
+        layout === "horizontal" ? "w-[300px]" : "w-full",
+        variant === "dull" && "opacity-60 bg-muted/30"
       )}>
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col items-start gap-2 w-full">
@@ -92,3 +95,4 @@ export default function MealCard({
     </Link>
   );
 }
+

@@ -2,7 +2,7 @@
 
 import { Hourglass, CheckCircle2, XCircle } from "lucide-react"
 import { pendingEventCard, upcomingEventCard } from "@/backendData/data-type"
-import MealCard from "@/app/(home)/_components/HomeMealCards"
+import MealCard from "@/components/MealCard"
 
 type PendingMealCardData = pendingEventCard | upcomingEventCard
 

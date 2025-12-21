@@ -8,7 +8,7 @@ export function SecondaryPagesNavbar({title}: {title: string}) {
   const router = useRouter();
 
   return (
-    <div className="sticky top-0 z-10 flex items-center bg-background-light/80 p-4 backdrop-blur-sm">
+    <div className="sticky top-0 z-10 flex items-center justify-center bg-white py-1 px-4" style={{ height: '48px' }}>
       <Button
         variant="ghost"
         size="icon"

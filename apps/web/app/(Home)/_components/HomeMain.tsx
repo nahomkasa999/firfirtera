@@ -1,6 +1,6 @@
 "use client";
 
-import MealCard from "@/app/(home)/_components/HomeMealCards";
+import MealCard from "@/components/MealCard";
 import type { dashboardMealCard } from "@/backendData/data-type";
 
 interface HomeMainProps {
