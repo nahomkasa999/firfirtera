@@ -5,14 +5,30 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { formatTime, formatPrice, getCuisine } from "../_helpers/HomeHelper";
+import { Hourglass, CheckCircle2, XCircle, LucideIcon } from "lucide-react";
+
+type StatusDisplay = {
+  icon: LucideIcon;
+  text: string;
+  color: string;
+};
 
 // Reusable Meal Card Component
-export default function MealCard({ meal, layout = "vertical" }: { meal: any; layout?: "horizontal" | "vertical" }) {
+export default function MealCard({ 
+  meal, 
+  layout = "vertical",
+  status 
+}: { 
+  meal: any; 
+  layout?: "horizontal" | "vertical";
+  status?: StatusDisplay;
+}) {
   const cuisine = getCuisine(meal.mealname);
-  const time = formatTime(meal.mealtime);
+  const time = meal.formattedTime || formatTime(meal.mealtime);
   const distance = `${meal.distance?.toFixed(1) || "0.0"} mi`;
   const price = formatPrice(meal.mealPrice, meal.expectedusers);
   const joinedCount = meal.joinedusers.length;
+  const StatusIcon = status?.icon;
 
   return (
     <Link href={`/meal/${meal.mealId}`} className="block">
@@ -47,6 +63,15 @@ export default function MealCard({ meal, layout = "vertical" }: { meal: any; lay
               <span className="text-xs">•</span>
               <span className="text-xs">{distance}</span>
             </div>
+
+            {status && StatusIcon && (
+              <div className="mt-2 flex items-center gap-1.5">
+                <StatusIcon className={`w-4 h-4 ${status.color}`} />
+                <span className={`text-xs font-semibold ${status.color}`}>
+                  {status.text}
+                </span>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col items-center gap-1.5 self-center">
