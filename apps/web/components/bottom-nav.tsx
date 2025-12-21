@@ -1,5 +1,5 @@
 "use client"
-import { Plus, Home, Search, MessageCircle, UserCircle} from 'lucide-react'
+import { Plus, Home, Calendar, MessageCircle, UserCircle} from 'lucide-react'
 import { usePathname} from 'next/navigation'
 import Link from 'next/link'
 import React from 'react'
@@ -7,7 +7,7 @@ import React from 'react'
 const BottomNav = () => {
    const navItems = [
         { name: 'Home', href: '/', icon: Home },
-        { name: 'Explore', href: '/explore', icon: Search },
+        { name: 'My Events', href: '/my-events', icon: Calendar },
         { name: 'Create', href: '/create', icon: Plus },
         { name: 'Messages', href: '/messages', icon: MessageCircle },
         { name: 'Profile', href: '/profile', icon: UserCircle },
@@ -22,12 +22,13 @@ const BottomNav = () => {
             {navItems.map((item) => {
                 const active = isActive(item.href);
                 return (
-                    <Link key={item.href} href={item.href}>
+                    <Link key={item.href} href={item.href} className="flex flex-col items-center gap-1">
                         <item.icon
                             className={
                                 `w-6 h-6 ${active ? 'text-primary' : 'text-gray-400'}`
                             }
                         />
+                        <span className={`text-xs font-medium ${active ? 'text-primary' : 'text-gray-400'}`}>{item.name}</span>
                     </Link>
                 );
             })}

@@ -57,7 +57,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Lucy Restaurant, Bole Road, Addis Ababa",
         latitude: 9.0120,
         longitude: 38.7617,
-        mealtime: new Date("2024-01-25T19:00:00"),
+        mealtime: new Date("2026-01-05T19:00:00"),
         mealdescription: "Traditional Ethiopian food - let's share a large platter! Injera, doro wat, and more. Perfect for food lovers!",
         mealpicture: "https://robohash.org/ethiopian-platter.jpg",
         joinedusers: [
@@ -81,7 +81,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Kaldi's Coffee, Meskel Square, Addis Ababa",
         latitude: 9.0200,
         longitude: 38.7500,
-        mealtime: new Date("2024-01-24T14:00:00"),
+        mealtime: new Date("2026-01-06T14:00:00"),
         mealdescription: "Coffee and pastries on me! Let's chat about tech and travel.",
         joinedusers: [
             { name: "David K.", profilePicture: "https://robohash.org/david.jpg" }
@@ -103,7 +103,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Habesha Restaurant, Piazza, Addis Ababa",
         latitude: 9.0300,
         longitude: 38.7400,
-        mealtime: new Date("2024-01-26T18:30:00"),
+        mealtime: new Date("2026-01-07T18:30:00"),
         mealdescription: "Let's explore local cuisine together! 200 birr per person.",
         mealvideo: "https://tiktok.com/@foodie/video123",
         joinedusers: [],
@@ -125,7 +125,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Pizza Hut, Bole, Addis Ababa",
         latitude: 9.0150,
         longitude: 38.7700,
-        mealtime: new Date("2024-01-27T20:00:00"),
+        mealtime: new Date("2026-01-08T20:00:00"),
         mealdescription: "Large pizza to share - let's split the bill!",
         mealpicture: "https://robohash.org/pizza.jpg",
         joinedusers: [
@@ -149,7 +149,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Kaldi's Coffee, Bole Road, Addis Ababa",
         latitude: 9.0130,
         longitude: 38.7620,
-        mealtime: new Date("2024-01-24T08:00:00"),
+        mealtime: new Date("2026-01-09T08:00:00"),
         mealdescription: "Early morning breakfast - close to your location!",
         joinedusers: [
             { name: "Anna L.", profilePicture: "https://robohash.org/anna.jpg" }
@@ -171,7 +171,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Traditional Restaurant, Bole, Addis Ababa",
         latitude: 9.0140,
         longitude: 38.7630,
-        mealtime: new Date("2024-01-25T12:30:00"),
+        mealtime: new Date("2026-01-10T12:30:00"),
         mealdescription: "Lunch together - 250 birr contribution",
         mealpicture: "https://robohash.org/restaurant.jpg",
         joinedusers: [
@@ -196,7 +196,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Sushi Restaurant, Bole, Addis Ababa",
         latitude: 9.0125,
         longitude: 38.7615,
-        mealtime: new Date("2024-01-24T19:30:00"),
+        mealtime: new Date("2026-01-11T19:30:00"),
         mealdescription: "Only 1 spot left! Let's enjoy sushi together.",
         mealpicture: "https://robohash.org/sushi.jpg",
         joinedusers: [
@@ -222,7 +222,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Italian Restaurant, Bole, Addis Ababa",
         latitude: 9.0135,
         longitude: 38.7625,
-        mealtime: new Date("2024-01-26T20:00:00"),
+        mealtime: new Date("2026-01-01T20:00:00"),
         mealdescription: "Pasta and wine night!",
         mealpicture: "https://robohash.org/italian.jpg",
         joinedusers: [
@@ -235,8 +235,8 @@ export const allMeals: baseMealData[] = [
             profilePicture: currentUser.profilePicture,
             userId: currentUser.userId
         },
-        createdAt: new Date("2024-01-20T09:00:00"),
-        updatedAt: new Date("2024-01-23T10:00:00"),
+        createdAt: new Date("2025-12-20T09:00:00"),
+        updatedAt: new Date("2025-12-23T10:00:00"),
         userRelationship: "host"
     },
     // Upcoming events - Attending
@@ -247,7 +247,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Coffee Shop, Meskel Square, Addis Ababa",
         latitude: 9.0200,
         longitude: 38.7500,
-        mealtime: new Date("2024-01-24T15:00:00"),
+        mealtime: new Date("2026-01-02T15:00:00"),
         mealdescription: "Afternoon coffee and snacks",
         joinedusers: [
             { name: "Kenji", profilePicture: currentUser.profilePicture },
@@ -259,8 +259,8 @@ export const allMeals: baseMealData[] = [
             profilePicture: "https://robohash.org/sophie.jpg",
             userId: "user_sophie_008"
         },
-        createdAt: new Date("2024-01-21T11:00:00"),
-        updatedAt: new Date("2024-01-22T14:00:00"),
+        createdAt: new Date("2025-12-21T11:00:00"),
+        updatedAt: new Date("2025-12-22T14:00:00"),
         userRelationship: "joined"
     },
     {
@@ -271,7 +271,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "BBQ Place, Bole, Addis Ababa",
         latitude: 9.0145,
         longitude: 38.7640,
-        mealtime: new Date("2024-01-28T19:00:00"),
+        mealtime: new Date("2026-01-03T19:00:00"),
         mealdescription: "Grilled meats and sides",
         mealpicture: "https://robohash.org/bbq.jpg",
         joinedusers: [
@@ -285,8 +285,8 @@ export const allMeals: baseMealData[] = [
             profilePicture: "https://robohash.org/chris.jpg",
             userId: "user_chris_009"
         },
-        createdAt: new Date("2024-01-22T10:00:00"),
-        updatedAt: new Date("2024-01-23T09:00:00"),
+        createdAt: new Date("2025-12-22T10:00:00"),
+        updatedAt: new Date("2025-12-23T09:00:00"),
         userRelationship: "joined"
     },
     // Pending events
@@ -298,7 +298,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Seafood Restaurant, Bole, Addis Ababa",
         latitude: 9.0150,
         longitude: 38.7650,
-        mealtime: new Date("2024-01-29T19:30:00"),
+        mealtime: new Date("2026-01-04T19:30:00"),
         mealdescription: "Fresh seafood platter",
         mealpicture: "https://robohash.org/seafood.jpg",
         joinedusers: [
@@ -311,8 +311,8 @@ export const allMeals: baseMealData[] = [
             profilePicture: "https://robohash.org/michael.jpg",
             userId: "user_michael_010"
         },
-        createdAt: new Date("2024-01-22T15:00:00"),
-        updatedAt: new Date("2024-01-23T08:00:00"),
+        createdAt: new Date("2025-12-22T15:00:00"),
+        updatedAt: new Date("2025-12-23T08:00:00"),
         userRelationship: "pending"
     },
     {
@@ -322,7 +322,7 @@ export const allMeals: baseMealData[] = [
         meallocation: "Local Eatery, Piazza, Addis Ababa",
         latitude: 9.0300,
         longitude: 38.7400,
-        mealtime: new Date("2024-01-30T18:00:00"),
+        mealtime: new Date("2026-01-12T18:00:00"),
         mealdescription: "Exploring local cuisine",
         mealvideo: "https://youtube.com/watch?v=local-food",
         joinedusers: [

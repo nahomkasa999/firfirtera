@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Utensils, Map, Search, Filter, ChevronDown, ChevronLeft } from "lucide-react";
+import { Utensils, Map, Search, Filter, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,23 +13,13 @@ import {
 export default function HomeTopNavBar() {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
  
 
   return (
     <header className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm pt-0 border-b border-border/40">
       {/* 1. Header Row */}
       <div className="flex items-center p-4 justify-between">
-        <div className="flex size-12 shrink-0 items-center justify-start text-foreground gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-10 w-10 rounded-full"
-            onClick={() => router.back()}
-            aria-label="Go back"
-          >
-            <ChevronLeft className="h-6 w-6 text-foreground" />
-          </Button>
+        <div className="flex size-12 shrink-0 items-center justify-start text-foreground">
           <Utensils className="text-3xl text-primary" />
         </div>
         <h1 className="text-foreground text-2xl font-bold leading-none tracking-[-0.015em] flex-1 text-start">
