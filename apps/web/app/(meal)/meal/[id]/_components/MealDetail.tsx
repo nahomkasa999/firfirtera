@@ -1,13 +1,12 @@
 "use client"
 
 import { Users, Clock, MapPin, CreditCard, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { cn } from "@/lib/utils"
 import type { mealDetailData } from "@/backendData/data-type"
 import { useParams } from "next/navigation"
 import { getMealById } from "@/backendData/queries"
+import MealDetailFooter from "./MealDetailFooter"
 
 export default function MealDetail() {
 
@@ -156,16 +155,7 @@ export default function MealDetail() {
         </div>
       </main>
 
-      {/* Footer Button */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background-light via-background-light to-transparent p-4 mb-10">
-        <Button
-          className={cn(
-            "flex h-14 w-full items-center justify-center rounded-lg text-lg font-bold shadow-lg"
-          )}
-        >
-          {meal.userRelationship === "can_join" ? "Join" : "Chat"}
-        </Button>
-      </footer>
+      <MealDetailFooter meal={meal} />
     </div>
   )
 }
