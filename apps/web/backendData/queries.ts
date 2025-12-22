@@ -10,9 +10,10 @@ import type {
     pastEventsData,
     pastEventCard,
     hostMealRequestsData,
-    appliedMealDetailData
+    appliedMealDetailData,
+    profileData
 } from "./data-type";
-import { allMeals } from "./data";
+import { allMeals, profileMockData } from "./data";
 import {
     addDistanceToMeal,
     transformToMealDetail,
@@ -199,4 +200,12 @@ export function getAppliedMealDetail(mealId: string): appliedMealDetailData | nu
         requestStatus: "Pending" as const,
         requestSubmittedAt: meal.updatedAt, // Use updatedAt as request submission time
     };
+}
+
+/**
+ * Get user profile data
+ * Returns the current user's profile information
+ */
+export function getProfile(): profileData {
+    return profileMockData;
 }
