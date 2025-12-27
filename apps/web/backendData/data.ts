@@ -1,4 +1,4 @@
-import type { baseMealData } from './data-type';
+import type { baseMealData, messagesListData, chatDetailData, profileData, participantProfileData } from './data-type';
 
 // Mock data for current user
 // This represents what a logged-in user object looks like
@@ -416,7 +416,6 @@ export const allMeals: baseMealData[] = [
 // ============================================
 // PROFILE PAGE MOCK DATA (User's Own Profile)
 // ============================================
-import type { profileData, participantProfileData } from './data-type';
 
 export const profileMockData: profileData = {
     name: "Kenji",
@@ -481,4 +480,168 @@ export const participantProfileMockData: participantProfileData = {
     },
     showAcceptDecline: true,
     requestId: "request_001"
+};
+
+// ============================================
+// MESSAGES MOCK DATA
+// ============================================
+
+export const messagesListMockData: messagesListData = {
+    currentEvent: [
+        {
+            mealId: "meal_001",
+            mealName: "Firfir Dinner",
+            mealPicture: undefined,
+            participants: [
+                {
+                    userId: "user_maria_001",
+                    name: "Maria",
+                    profilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"
+                },
+                {
+                    userId: currentUser.userId,
+                    name: currentUser.name,
+                    profilePicture: currentUser.profilePicture
+                }
+            ],
+            lastMessage: {
+                senderName: "Maria",
+                content: "Perfect! See you both soon!",
+                timestamp: new Date(new Date().setHours(16, 34, 0, 0))
+            },
+            formattedLastMessageTime: "4:34 PM",
+            isActive: true
+        }
+    ],
+    pastEvents: [
+        {
+            mealId: "meal_002",
+            mealName: "Taco Tuesday",
+            mealPicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw",
+            participants: [
+                {
+                    userId: "user_john_001",
+                    name: "John",
+                    profilePicture: "https://robohash.org/john.jpg"
+                },
+                {
+                    userId: currentUser.userId,
+                    name: currentUser.name,
+                    profilePicture: currentUser.profilePicture
+                }
+            ],
+            lastMessage: {
+                senderName: "You",
+                content: "That was amazing! Thanks for organizing.",
+                timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000) // Yesterday
+            },
+            formattedLastMessageTime: "Yesterday",
+            isActive: false
+        },
+        {
+            mealId: "meal_003",
+            mealName: "Brunch Party",
+            mealPicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw",
+            participants: [
+                {
+                    userId: currentUser.userId,
+                    name: currentUser.name,
+                    profilePicture: currentUser.profilePicture
+                }
+            ],
+            lastMessage: {
+                senderName: "Kenji",
+                content: "I'm running about 10 mins late.",
+                timestamp: new Date("2024-05-12T10:00:00")
+            },
+            formattedLastMessageTime: "May 12",
+            isActive: false
+        },
+        {
+            mealId: "meal_004",
+            mealName: "Sushi Night",
+            mealPicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw",
+            participants: [
+                {
+                    userId: "user_maria_001",
+                    name: "Maria",
+                    profilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"
+                },
+                {
+                    userId: currentUser.userId,
+                    name: currentUser.name,
+                    profilePicture: currentUser.profilePicture
+                }
+            ],
+            lastMessage: {
+                senderName: "Maria",
+                content: "Can't wait! I love sushi.",
+                timestamp: new Date("2024-05-05T12:00:00")
+            },
+            formattedLastMessageTime: "May 5",
+            isActive: false
+        }
+    ]
+};
+
+export const chatDetailMockData: Record<string, chatDetailData> = {
+    "meal_001": {
+        mealId: "meal_001",
+        mealName: "Firfir Dinner",
+        participants: [
+            {
+                userId: "user_maria_001",
+                name: "Maria",
+                profilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw"
+            },
+            {
+                userId: currentUser.userId,
+                name: currentUser.name,
+                profilePicture: currentUser.profilePicture
+            },
+            {
+                userId: "user_kenji_other",
+                name: "Kenji",
+                profilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw"
+            }
+        ],
+        messages: [
+            {
+                messageId: "msg_001",
+                senderId: "user_maria_001",
+                senderName: "Maria",
+                senderProfilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw",
+                content: "Hey everyone! So excited for tonight. Just wanted to confirm, we're still on for 7 PM at my place, right?",
+                timestamp: new Date(new Date().setHours(16, 30, 0, 0)),
+                isCurrentUser: false
+            },
+            {
+                messageId: "msg_002",
+                senderId: currentUser.userId,
+                senderName: currentUser.name,
+                senderProfilePicture: currentUser.profilePicture,
+                content: "Yep, 7 PM works for me! I can bring some drinks. Any preferences?",
+                timestamp: new Date(new Date().setHours(16, 32, 0, 0)),
+                isCurrentUser: true
+            },
+            {
+                messageId: "msg_003",
+                senderId: "user_kenji_other",
+                senderName: "Kenji",
+                senderProfilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxaqLnyzddMGAraaRlcIXBAxs9PFkhCe7JRVh5_plC44Nay2nDbOwxsOtpBU1PemJfWShZQYOJoUY-PFLj0Dnq5Wl1X-JqoLrNIf6sXDAJWwbcecDO5FUzkBoUhhK_yDE0HbLJ5lGhD3KNar6kdCIBzFJSOMcLRm9HaHzPUEkE5tZy3zQAslDYExTRUVnPJOvDB2a3nQ7Ev8K18gT43wzeoLe6oWRKPb1CP4ExrPlXYpDoxE7AAEfnYX45FBApBuxC2CD2nEpNZw",
+                content: "Sounds great! I'm good with anything. Maybe some white wine?",
+                timestamp: new Date(new Date().setHours(16, 33, 0, 0)),
+                isCurrentUser: false
+            },
+            {
+                messageId: "msg_004",
+                senderId: "user_maria_001",
+                senderName: "Maria",
+                senderProfilePicture: "https://lh3.googleusercontent.com/aida-public/AB6AXuAqtglKn_-XrSRCMDSy8NF6gAi0HNjTrf_aVdvsVZxpIvwu7UusC-Iwu520origCorDfTyVh4zk176ji22o14Ia48lJ_fvDIRZhiZCQGoeH9SEs6vwrxcCN-XtJVJOkmoOT04sd27q5TgFl7bv0DPoojumPXORPWWza0TRDKKfZj4Vi_1OCjJJdbyUPr-LVOSDbhGmQAJRpjNvx5Q9fFQlT908EajW88AK1CfHzo-CXMLbw5_HFEW6YwgwAlnRpp7u0jZxB3j5Mgw",
+                content: "Perfect! See you both soon!",
+                timestamp: new Date(new Date().setHours(16, 34, 0, 0)),
+                isCurrentUser: false
+            }
+        ]
+    }
 };

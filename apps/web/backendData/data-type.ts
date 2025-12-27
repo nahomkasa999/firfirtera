@@ -246,3 +246,54 @@ export type tellusaboutyourselfData = {
     interests?: string[]; // Array of interest tags (e.g., ["Vegan", "Tech", "Travel"])
     occupation: string; // User's occupation (e.g., "Product Designer")
 }
+
+// ============================================
+// MESSAGES PAGE DATA TYPES
+// ============================================
+// Messages page shows list of meal chats (Current Event and Past Events)
+// Each chat is associated with a meal
+
+export interface ChatMessage {
+    messageId: string; // Unique identifier for the message
+    senderId: string; // User ID of the sender
+    senderName: string; // Name of the sender
+    senderProfilePicture: string; // Profile picture of the sender
+    content: string; // Message content
+    timestamp: Date; // When the message was sent
+    isCurrentUser: boolean; // Whether this message is from the current user
+}
+
+export interface MealChat {
+    mealId: string; // Meal ID this chat belongs to
+    mealName: string; // Name of the meal (e.g., "Firfir Dinner", "Sushi Night")
+    mealPicture?: string; // Meal picture or group picture
+    participants: Array<{
+        userId: string;
+        name: string;
+        profilePicture: string;
+    }>; // List of participants in the chat
+    lastMessage: {
+        senderName: string; // Name of the last message sender
+        content: string; // Last message content
+        timestamp: Date; // When the last message was sent
+    };
+    formattedLastMessageTime: string; // Formatted time (e.g., "4:34 PM", "Yesterday", "May 5")
+    isActive: boolean; // true for current event, false for past event
+    unreadCount?: number; // Number of unread messages (optional)
+}
+
+export type messagesListData = {
+    currentEvent: MealChat[]; // Active meal chats
+    pastEvents: MealChat[]; // Past meal chats
+}
+
+export type chatDetailData = {
+    mealId: string; // Meal ID
+    mealName: string; // Name of the meal
+    participants: Array<{
+        userId: string;
+        name: string;
+        profilePicture: string;
+    }>; // List of participants
+    messages: ChatMessage[]; // All messages in the chat
+}

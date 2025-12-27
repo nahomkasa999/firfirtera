@@ -32,8 +32,11 @@ export default function MealCard({
   const joinedCount = meal.joinedusers.length;
   const StatusIcon = status?.icon;
 
+  // If user is hosting, link to requests page, otherwise link to meal detail
+  const href = meal.isHosting ? `/meal/${meal.mealId}/requests` : `/meal/${meal.mealId}`
+
   return (
-    <Link href={`/meal/${meal.mealId}`} className="block">
+    <Link href={href} className="block">
       <Card className={cn(
         "flex flex-col items-stretch justify-start rounded-[var(--radius)] shadow-sm bg-card p-4 shrink-0 cursor-pointer transition-opacity hover:opacity-90",
         layout === "horizontal" ? "w-[300px]" : "w-full",

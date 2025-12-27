@@ -11,9 +11,12 @@ import type {
     pastEventCard,
     hostMealRequestsData,
     appliedMealDetailData,
-    profileData
+    profileData,
+    participantProfileData,
+    messagesListData,
+    chatDetailData
 } from "./data-type";
-import { allMeals, profileMockData } from "./data";
+import { allMeals, profileMockData, participantProfileMockData, messagesListMockData, chatDetailMockData } from "./data";
 import {
     addDistanceToMeal,
     transformToMealDetail,
@@ -208,4 +211,35 @@ export function getAppliedMealDetail(mealId: string): appliedMealDetailData | nu
  */
 export function getProfile(): profileData {
     return profileMockData;
+}
+
+/**
+ * Get participant profile data
+ * Returns profile information for viewing another user's profile
+ */
+export function getParticipantProfile(userId: string): participantProfileData | null {
+    // In a real app, fetch from database based on userId
+    // For now, return mock data if userId matches
+    if (userId === participantProfileMockData.userId) {
+        return participantProfileMockData;
+    }
+    // Return null if user not found
+    return null;
+}
+
+/**
+ * Get messages list data
+ * Returns list of current and past meal chats
+ */
+export function getMessagesList(): messagesListData {
+    return messagesListMockData;
+}
+
+/**
+ * Get chat detail data for a specific meal
+ * Returns chat messages and participant info
+ */
+export function getChatDetail(mealId: string): chatDetailData | null {
+    // In a real app, fetch from database based on mealId
+    return chatDetailMockData[mealId] || null;
 }
