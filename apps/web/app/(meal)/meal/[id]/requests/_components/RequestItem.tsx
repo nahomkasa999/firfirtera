@@ -15,7 +15,7 @@ interface RequestItemProps {
 export default function RequestItem({ request, onAccept, onDecline }: RequestItemProps) {
   const initials = request.name
     .split(" ")
-    .map((n) => n[0])
+    .map((n: string) => n[0])
     .join("")
     .toUpperCase()
 

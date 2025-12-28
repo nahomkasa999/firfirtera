@@ -160,7 +160,7 @@ export type pastEventsData = {
 // Shows meal details and list of users who requested to join
 // Host can accept or decline each request
 
-interface MealRequestUser {
+export interface MealRequestUser {
     userId: string; // User ID for navigation to profile
     name: string; // User's name (e.g., "Jane D.")
     profilePicture: string; // User's profile picture URL
@@ -170,6 +170,8 @@ interface MealRequestUser {
 export type hostMealRequestsData = Omit<baseMealData, "userRelationship" | "joinedusers"> & {
     // Meal header information
     formattedTime: string; // Formatted time string (e.g., "Saturday, Nov 18 at 7:00 PM")
+    // Joined users count (since joinedusers is omitted)
+    joinedUsersCount?: number; // Number of users who have joined
     // Pending requests
     pendingRequests: MealRequestUser[]; // List of users who requested to join (pending approval)
     pendingRequestsCount: number; // Total number of pending requests

@@ -34,7 +34,7 @@ export default function MealHeaderCard({ meal }: MealHeaderCardProps) {
             <div>
               <p className="text-sm font-medium text-muted-foreground">Status</p>
               <p className="font-bold text-foreground">
-                {meal.joinedusers?.length || 0}/{meal.expectedusers} Joined
+                {meal.joinedUsersCount || 0}/{meal.expectedusers} Joined
               </p>
             </div>
           </div>

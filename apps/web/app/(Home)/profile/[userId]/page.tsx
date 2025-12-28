@@ -1,8 +1,8 @@
 import ParticipantProfileNavbar from "./_components/ParticipantProfileNavbar"
 import ParticipantProfileHeader from "./_components/ParticipantProfileHeader"
-import ProfileStats from "../../_components/ProfileStats"
-import ProfileInterests from "../../_components/ProfileInterests"
-import ProfileComments from "../../_components/ProfileComments"
+import ProfileStats from "../_components/ProfileStats"
+import ProfileInterests from "../_components/ProfileInterests"
+import ProfileComments from "../_components/ProfileComments"
 import { getParticipantProfile } from "@/backendData/queries"
 import { notFound } from "next/navigation"
 
