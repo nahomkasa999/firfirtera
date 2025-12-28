@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { formatTime, formatPrice, getCuisine } from "@/app/(home)/_helpers/HomeHelper";
+import { formatTime, formatPrice, getCuisine } from "@/app/(Home)/_helpers/HomeHelper";
 import { Hourglass, CheckCircle2, XCircle, LucideIcon } from "lucide-react";
 
 type StatusDisplay = {
