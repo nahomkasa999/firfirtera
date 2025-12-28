@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  userId        String   @unique
+  name          String
+  username      String   @unique
+  email         String?
+  phoneNumber   String?
+  countryCode   String?
+  age           Int?
+  showAge       Boolean  @default(true)
+  gender        String   // "Male" | "Female"
+  profilePicture String
+  occupation    String
+  aboutme       String
+  interests     String   // JSON array stored as string
+  isVerified    Boolean  @default(false)
+  currentLat    Float
+  currentLon    Float
+  currentAddress String
+  statsHosted   Int      @default(0)
+  statsJoined   Int      @default(0)
+  statsRating   Float    @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  hostedMeals   Meal[]   @relation("Host")
+  mealRequests  MealRequest[]
+  messages      Message[]
+
+  @@map("users")
+}
+
+model Meal {
+  id              String   @id @default(uuid())
+  mealId          String   @unique
+  mealtype         String   // "Split" | "Treat" | "Companion"
+  mealname         String?
+  mealPrice        String   // Store as string to handle "Free" or number
+  meallocation     String
+  latitude         Float
+  longitude        Float
+  distance         Float?
+  mealtime         DateTime
+  mealdescription    String?
+  mealpicture      String?
+  mealvideo        String?
+  expectedusers    Int
+  mealgenderpreference String // "Anonymous" | "Specific"
+  numberofmales    Int?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  hostId           String
+  host              User     @relation("Host", fields: [hostId], references: [userId])
+  joinedUsers       MealJoinedUser[]
+  mealRequests      MealRequest[]
+  messages          Message[]
+
+  @@map("meals")
+}
+
+model MealJoinedUser {
+  id            String   @id @default(uuid())
+  mealId        String
+  meal          Meal     @relation(fields: [mealId], references: [mealId], onDelete: Cascade)
+  name          String
+  profilePicture String
+
+  @@map("meal_joined_users")
+}
+
+model MealRequest {
+  id            String   @id @default(uuid())
+  requestId     String   @unique
+  mealId        String
+  meal          Meal     @relation(fields: [mealId], references: [mealId], onDelete: Cascade)
+  userId        String
+  user          User     @relation(fields: [userId], references: [userId])
+  status        String   @default("Pending") // "Pending" | "Accepted" | "Rejected"
+  submittedAt   DateTime @default(now())
+
+  @@map("meal_requests")
+}
+
+model Message {
+  id              String   @id @default(uuid())
+  messageId       String   @unique
+  mealId          String
+  meal            Meal     @relation(fields: [mealId], references: [mealId], onDelete: Cascade)
+  senderId        String
+  sender           User     @relation(fields: [senderId], references: [userId])
+  content         String
+  timestamp       DateTime @default(now())
+
+  @@map("messages")
+}
+
+model ProfileComment {
+  id              String   @id @default(uuid())
+  userId          String   // User being commented on
+  commenterId     String   // User who commented
+  commenterName   String
+  commenterAvatarUrl String
+  rating          Int      // 1-5
+  comment         String
+  createdAt       DateTime @default(now())
+
+  @@map("profile_comments")
+}
+
