@@ -14,6 +14,13 @@ const BottomNav = () => {
       ] 
 
   const pathname = usePathname()
+  
+  // Hide BottomNav on auth pages and welcome page
+  const authPaths = ['/login', '/signup', '/welcome'];
+  if (authPaths.includes(pathname)) {
+    return null;
+  }
+
   const isActive = (href: string) => {
     if (href === '/upcoming') {
       return pathname === '/upcoming' || pathname === '/pending' || pathname === '/past'
