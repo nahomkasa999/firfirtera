@@ -2,6 +2,8 @@
 
 A bot with real users that matches people who want to eat with random people and get to know each other.
 
+**A bot with real users, matching people who want to eat with random people and get to know each other.**
+
 ## Stack
 
 Turborepo + TypeScript · Next.js 16 (web app in `apps/web`) · React 19 · Tailwind CSS 4 · TanStack Query · React Hook Form + Zod
